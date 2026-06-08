@@ -98,7 +98,8 @@ header.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end
 .bgvid:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,13,.5) 0%,rgba(12,12,13,.18) 26%,rgba(12,12,13,.55) 52%,rgba(12,12,13,.86) 70%,rgba(12,12,13,.98) 100%)}
 header.hero .inner{position:relative;z-index:2;padding-bottom:26px;width:100%}
 header.hero .inner .wrap{text-align:center}
-header.hero h1{display:inline-block;font-family:var(--display);font-weight:400;font-size:clamp(46px,11.5vw,146px);line-height:.8;letter-spacing:-.01em;text-transform:uppercase}
+header.hero h1{display:inline-block;font-family:var(--display);font-weight:400;font-size:clamp(46px,11.5vw,146px);line-height:.8;letter-spacing:-.01em;text-transform:uppercase;max-width:100%;opacity:0;transition:opacity .35s ease}
+body.fonts-ready header.hero h1{opacity:1}
 .nl{display:block;text-align:center}
 .nl .nt{display:inline-block;transform-origin:center}
 .herometa{margin:0 auto 18px;text-align:left}
@@ -115,6 +116,12 @@ header.hero .tag{margin:16px auto 0;font-size:clamp(15px,1.9vw,21px);color:#efec
 .btn.line{border:1px solid var(--line);color:var(--ink)}
 .btn.line:hover{border-color:var(--ink)}
 .scrollhint{position:absolute;bottom:22px;right:28px;z-index:3;font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+#statement{background:var(--bg);padding-top:clamp(64px,8vw,110px)}
+.statement-body{max-width:780px;margin-top:26px}
+.statement-body p{font-size:clamp(17px,1.8vw,22px);line-height:1.6;color:#cfcabf;margin-bottom:22px;font-weight:400}
+.statement-body p:first-child{color:var(--ink)}
+.statement-body .close{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(20px,2.6vw,34px);line-height:1.12;letter-spacing:-.01em;color:var(--ink);margin-top:6px}
+.statement-body .close .hl{color:var(--accent)}
 .volbtn{position:absolute;top:78px;right:36px;z-index:6;width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:rgba(12,12,13,.5);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);color:var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.2s}
 .volbtn:hover{border-color:var(--ink)}
 .volbtn svg{width:20px;height:20px;display:block}
@@ -243,7 +250,7 @@ section.dark{background:var(--bg2)}
 .gal img:hover{filter:grayscale(0);transform:scale(1.02)}
 
 .vid-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;padding:0 12px}
-@media(max-width:560px){.vid-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.vid-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .vthumb{position:relative;aspect-ratio:16/9;border-radius:3px;overflow:hidden;cursor:pointer;border:1px solid var(--line);background:#000}
 .vthumb img{width:100%;height:100%;object-fit:cover;opacity:.8;transition:.3s}
 .vthumb:hover img{opacity:1}
@@ -433,6 +440,16 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
   <div class="scrollhint">scroll &darr;</div>
 </header>
 
+<section id="statement"><div class="wrap">
+  <p class="eyebrow">En primera persona</p>
+  <div class="statement-body">
+    <p>Inicié mi camino en la actuación a los 13 años en Rosario y, desde entonces, mi carrera (mi vida) ha estado marcada por mi vínculo profundo con la actuación. Desde que comenzó siendo un juego, hasta hoy, que lo hago de manera profesional y cobro por hacer eso que siempre hice desde pequeño: jugar, crear mundos, contar historias, habitar personajes. Y con el tiempo, comprender la actuación me llevó a explorar profundamente las capas de lo humano, del comportamiento, del gesto, de la creación de la escena, de cosas que no existían antes. Una comprensión de la escena, de lo vincular, del intercambio con la mirada, la conciencia de la imagen…</p>
+    <p>…es para mí, la actuación, lo más importante de todo el recorrido. Y las personas, y las experiencias, y la vida expandida miles de veces que la actuación me brindó.</p>
+    <p>De niño jugaba. A los 13 actué por primera vez adelante del público y, desde ese año, lo hice para siempre. A los 19, desde allá lejos, un día dije «quiero ser actor», me puse en acción y empezó esta historia que hoy, a los 50, me encuentra viviendo en España hace 5 años, y ya actué en los escenarios más importantes de Barcelona y Madrid. Hoy, agradecido, feliz, sorprendido, miro hacia atrás y veo todo este recorrido al armar la página, lo recuerdo todo y respiro mirando a la vida a los ojos, diciéndole «ya no me debes nada». Lo que sigue es regalo. Los sueños ya están cumplidos.</p>
+    <p class="close">A disfrutar de diluirse en esta substancia: <span class="hl">actuar</span>.</p>
+  </div>
+</div></section>
+
 <section id="recorrido"><div class="wrap">
   <p class="eyebrow">Recorrido</p>
   <h2 class="sec">Argentina | España</h2>
@@ -520,11 +537,11 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
     <div class="bio-text">
       <p class="eyebrow">Bio</p>
       <h2 class="sec">Quién soy</h2>
-      <p class="lead">Inició su camino en la actuación a los 13 años en Rosario y, desde entonces, su carrera ha estado marcada por la búsqueda constante del riesgo y la verdad sobre el escenario. Radicado en Barcelona, cuenta con una sólida trayectoria de más de veinticinco años que abarca el teatro, el cine y la televisión a ambos lados del Atlántico.</p>
-      <p>Su rigurosa formación se consolidó en Buenos Aires, donde estudió en la Escuela de Teatro de Raúl Serrano y en el Instituto de Entrenamiento Actoral de Julio Chávez, completando además nueve años de entrenamiento profundo en el prestigioso Sportivo Teatral bajo la dirección de Ricardo Bartís. Amplió su perfil explorando la dramaturgia con maestros como Mauricio Kartún y Javier Daulte.</p>
+      <p class="lead">Radicado en Barcelona, cuenta con una sólida trayectoria de más de treinta años que abarca el teatro, el cine y la televisión a ambos lados del Atlántico.</p>
+      <p>Su enorme formación se consolidó en Buenos Aires, donde estudió en la Escuela de Teatro de Raúl Serrano y en el Instituto de Entrenamiento Actoral de Julio Chávez, completando además nueve años de entrenamiento en el prestigioso Sportivo Teatral bajo la dirección de Ricardo Bartís. Amplió su perfil explorando la dramaturgia con maestros como Mauricio Kartún y Javier Daulte.</p>
       <p>En el ámbito teatral, ha trabajado con directores de la talla de Daniel Veronese, Ricardo Bartís, Sergio Boris, Bernardo Cappa, Maruja Bustamante y actualmente con Ferran Utzet en Barcelona. Su labor interpretativa fue reconocida con el prestigioso Premio Teatro del Mundo a Mejor Actor.</p>
-      <p>En la pantalla grande y la televisión, ha colaborado con destacados realizadores como Juan José Campanella, Ariel Winograd y Juan Taratuto, entre otros. Entre sus trabajos más relevantes se encuentra su participación en el elenco protagónico de La corazonada, la primera película original de Netflix en Argentina, así como en las producciones El robo del siglo, Metegol y las series El Tigre Verón y Silencios de familia. Actualmente formó parte del film El profesor, junto a Javier Gutiérrez, que se estrenará por Netflix.</p>
-      <p>Además de su faceta como actor y director, se desempeña desde hace quince años como docente, dictando talleres de teatro y entrenamiento actoral enfocados en la improvisación dirigida, espacio que creó hace 5 años en Barcelona.</p>
+      <p>En la pantalla grande y la televisión, ha colaborado con destacados realizadores como Juan José Campanella, Ariel Winograd y Juan Taratuto, entre otros. Entre sus trabajos más relevantes se encuentra su participación en el elenco protagónico de La corazonada, la primera película original de Netflix en Argentina, así como en las producciones El robo del siglo, Metegol y las series El Tigre Verón, Silencios de familia y Niní. Actualmente formó parte del film El profesor, junto a Javier Gutiérrez, que se estrenará por Netflix.</p>
+      <p>Además de su faceta como actor y director, se desempeña desde hace quince años como docente, dictando talleres de teatro y entrenamiento actoral enfocados en la improvisación dirigida, espacio que refundó hace 5 años en Barcelona, luego de dirigir sus talleres durante 10 años en Argentina.</p>
       <div class="bio-btns">
         <a class="btn fill" href="assets/fotos-prensa-sebastian-mogordoy.zip" download>&#8595;&nbsp; Descargar fotos</a>
         <a class="btn line" href="assets/videos/videobook.mp4" download>&#8595;&nbsp; Descargar reel</a>
@@ -852,8 +869,12 @@ function fitHero(){
   if(!h1)return;
   const t=[...h1.querySelectorAll('.nt')];
   t.forEach(e=>{e.style.transform='none';});
-  let target=0;
-  t.forEach(e=>{ target=Math.max(target,e.getBoundingClientRect().width); });
+  let natural=0;
+  t.forEach(e=>{ natural=Math.max(natural,e.getBoundingClientRect().width); });
+  const wrap=h1.parentElement;
+  const cs=getComputedStyle(wrap);
+  const avail=wrap.clientWidth-parseFloat(cs.paddingLeft)-parseFloat(cs.paddingRight)-1;
+  const target=(avail>0)?Math.min(natural,avail):natural;
   t.forEach(e=>{ const w=e.getBoundingClientRect().width; if(w>0) e.style.transform='scaleX('+(target/w)+')'; });
   const eye=document.querySelector('.heroeye');
   const tag=document.querySelector('header.hero .tag');
@@ -862,11 +883,12 @@ function fitHero(){
   if(tag) tag.style.maxWidth=target+'px';
   if(meta) meta.style.width=target+'px';
 }
+function revealHero(){fitHero();document.body.classList.add('fonts-ready');}
 window.addEventListener('load',fitHero);
 window.addEventListener('resize',fitHero);
 document.querySelectorAll('nav .links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('nav .links').classList.remove('open')));
-if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitHero);
-setTimeout(fitHero,400);
+if(document.fonts&&document.fonts.ready){document.fonts.ready.then(revealHero);}else{revealHero();}
+setTimeout(revealHero,1800);
 
 const pbgs=document.querySelectorAll('.parallax .pbg');
 function parallax(){const vh=window.innerHeight;pbgs.forEach(b=>{const el=b.parentElement;const r=el.getBoundingClientRect();if(r.bottom<-80||r.top>vh+80)return;const prog=(r.top+r.height/2-vh/2)/(vh+r.height);b.style.transform='translate3d(0,'+(prog*-20).toFixed(2)+'%,0)';});}
