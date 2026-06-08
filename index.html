@@ -268,6 +268,28 @@ section.dark{background:var(--bg2)}
 .film-info{padding:11px 2px 0}
 .film-info h3{font-family:var(--display);font-weight:400;font-size:15px;text-transform:uppercase;letter-spacing:.01em;line-height:1.05}
 .film-info p{font-size:12px;color:var(--muted);margin-top:4px}
+/* PRENSA */
+#prensa>.wrap{max-width:none;padding:0 clamp(18px,4vw,48px)}
+.prensa-lead{font-family:var(--display);font-weight:400;font-size:clamp(26px,4vw,52px);line-height:1.12;letter-spacing:-.01em;margin:4px 0 6px;color:var(--ink)}
+.prensa-lead .hl{color:var(--accent)}
+.prensa-lead-src{color:var(--muted);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:30px}
+.prensa-quotes{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin:0 0 8px}
+.prensa-q{border-left:3px solid var(--accent);padding:4px 0 4px 18px}
+.prensa-q blockquote{font-family:var(--display);font-weight:400;font-size:clamp(17px,1.7vw,23px);line-height:1.22;letter-spacing:-.01em;color:var(--ink)}
+.prensa-q cite{display:block;margin-top:11px;font-style:normal;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:var(--accent)}
+.prensa-h{font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:36px 0 16px}
+.prensa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.prensa-card{display:block;color:inherit;border:1px solid var(--line);border-radius:5px;padding:20px;background:var(--bg2);transition:.2s;cursor:pointer}
+.prensa-card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.prensa-card .src{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.prensa-card h4{font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.32;margin:9px 0 7px;color:var(--ink)}
+.prensa-card p{font-size:13.5px;color:#cfcabf;line-height:1.5}
+.prensa-card .go{display:block;margin-top:13px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.prensa-card:hover .go{color:var(--accent)}
+.prensa-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
+.prensa-chip{border:1px solid var(--line);border-radius:3px;padding:9px 15px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);transition:.2s}
+.prensa-chip:hover{border-color:var(--accent);color:var(--accent)}
+@media(max-width:760px){.prensa-grid{grid-template-columns:1fr}}
 .textos-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px 48px}
 @media(max-width:760px){.textos-grid{grid-template-columns:1fr}}
 .texto-img{width:100%;height:240px;object-fit:cover;border-radius:4px;margin-bottom:16px;filter:grayscale(.1)}
@@ -374,6 +396,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
       <a href="#cv">Trayectoria</a>
       <a href="#talleres">Talleres</a>
       <a href="#filmografia">Cine · TV · Teatro</a>
+      <a href="#prensa">Prensa</a>
       <a href="#textos">Dramaturgia</a>
       <a href="#galeria">Galería</a>
     </div>
@@ -624,6 +647,59 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 <a class="film" href="https://www.youtube.com/watch?v=IiVPXFObSos" onclick="openVid({type:'yt',id:'IiVPXFObSos'});return false;"><div class="film-img film-clip"><img src="https://i.ytimg.com/vi/IiVPXFObSos/hqdefault.jpg" alt="Nota AM" loading="lazy" class="film-thumb"><span class="film-tag">Prensa</span><span class="film-play">&#9654;</span><span class="film-watch">Ver escena</span></div><div class="film-info"><h3>Nota AM</h3><p>Prensa TV</p></div></a>
 <a class="film" href="https://www.youtube.com/watch?v=vQyPPN08A1s" onclick="openVid({type:'yt',id:'vQyPPN08A1s'});return false;"><div class="film-img film-clip"><img src="https://i.ytimg.com/vi/vQyPPN08A1s/hqdefault.jpg" alt="Niní AM" loading="lazy" class="film-thumb"><span class="film-tag">Prensa</span><span class="film-play">&#9654;</span><span class="film-watch">Ver escena</span></div><div class="film-info"><h3>Niní AM</h3><p>Prensa TV</p></div></a>
 <a class="film" href="https://www.youtube.com/watch?v=UsSpYrCKOWI" onclick="openVid({type:'yt',id:'UsSpYrCKOWI'});return false;"><div class="film-img film-clip"><img src="https://i.ytimg.com/vi/UsSpYrCKOWI/hqdefault.jpg" alt="Backstage Niní" loading="lazy" class="film-thumb"><span class="film-tag">Backstage</span><span class="film-play">&#9654;</span><span class="film-watch">Ver escena</span></div><div class="film-info"><h3>Backstage Niní</h3><p>Detrás de escena</p></div></a>
+  </div>
+</div></section>
+
+<section id="prensa"><div class="wrap">
+  <p class="eyebrow">Prensa</p>
+  <h2 class="sec">Lo que se dijo</h2>
+  <p class="prensa-lead">&ldquo;Menci&oacute;n especial para Mogordoy, que es <span class="hl">de otro planeta</span>.&rdquo;</p>
+  <p class="prensa-lead-src">Pablo Caruana &middot; elDiario.es &middot; sobre Euforia y desaz&oacute;n</p>
+  <div class="prensa-quotes">
+    <div class="prensa-q"><blockquote>&ldquo;Uno de los actores m&aacute;s interesantes y originales de su generaci&oacute;n.&rdquo;</blockquote><cite>La Naci&oacute;n</cite></div>
+    <div class="prensa-q"><blockquote>&ldquo;Imposible no mencionar el trabajo impecable de Sebasti&aacute;n Mogordoy.&rdquo;</blockquote><cite>Cr&iacute;tica &middot; El Aliento</cite></div>
+    <div class="prensa-q"><blockquote>&ldquo;Le aporta una rica complejidad a este perdedor nato.&rdquo;</blockquote><cite>Cr&iacute;tica &middot; La Funeraria</cite></div>
+  </div>
+
+  <h3 class="prensa-h">Cr&iacute;tica</h3>
+  <div class="prensa-grid">
+    <a class="prensa-card" href="https://www.eldiario.es/cultura/teatro/euforia-desazon-retrato-teatral-descarnado-sociedad-argentina-milei-fondo_129_11705308.html" target="_blank" rel="noopener"><span class="src">elDiario.es &middot; 2025</span><h4>Euforia y desaz&oacute;n, un retrato descarnado de la sociedad argentina</h4><p>&ldquo;Menci&oacute;n especial para Mogordoy, que es de otro planeta.&rdquo; &mdash; Pablo Caruana</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
+    <a class="prensa-card" href="https://www.lanacion.com.ar/espectaculos/teatro/cuando-lo-no-dicho-estalla-en-pedazos-nid1176267/" target="_blank" rel="noopener"><span class="src">La Naci&oacute;n &middot; Teatro</span><h4>Cuando lo no dicho estalla en pedazos</h4><p>Cr&iacute;tica de Amor a tiros, de Bernardo Cappa.</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
+    <a class="prensa-card" href="https://www.cineyteatro.es/el-teatre-lliure-de-barcelona-estrena-el-fill-de-jon-fosse-una-mirada-a-la-incomunicacion/" target="_blank" rel="noopener"><span class="src">Cine y Teatro &middot; 2026</span><h4>El Lliure estrena El fill, de Jon Fosse</h4><p>&ldquo;Una tensi&oacute;n dram&aacute;tica sostenida que construyen los actores.&rdquo;</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
+    <a class="prensa-card" href="https://www.nuevatribuna.es/articulo/cultura---ocio/teatro-canal-euforia-sergio-boris/20251213194920245234.html" target="_blank" rel="noopener"><span class="src">Nueva Tribuna &middot; 2025</span><h4>Euforia y desaz&oacute;n, postales desde el margen</h4><p>Cr&iacute;tica del estreno en los Teatros del Canal, Madrid.</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
+    <a class="prensa-card" href="https://kritilo.com/2025/12/10/euforia-y-desazon/" target="_blank" rel="noopener"><span class="src">Kritilo &middot; 2025</span><h4>Euforia y desaz&oacute;n</h4><p>Rese&ntilde;a del montaje de Sergio Boris.</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
+    <a class="prensa-card" href="https://www.timeout.cat/barcelona/ca/teatre/el-fill-a-lespai-lliure-de-montjuic" target="_blank" rel="noopener"><span class="src">Time Out Barcelona</span><h4>El fill, a l&rsquo;Espai Lliure de Montju&iuml;c</h4><p>Una f&aacute;bula tensa, bella y sutil sobre la incomunicaci&oacute;n.</p><span class="go">Leer m&aacute;s &rarr;</span></a>
+    <a class="prensa-card" href="https://www.recomana.cat/obra/el-fill/" target="_blank" rel="noopener"><span class="src">Recomana.cat</span><h4>El fill &mdash; valoracions</h4><p>Cr&iacute;ticas y puntuaciones del montaje al Teatre Lliure.</p><span class="go">Leer m&aacute;s &rarr;</span></a>
+    <a class="prensa-card" href="http://blogteatro.blogspot.com/2009/04/bernardo-cappa-los-rocabilis-y-amor.html" target="_blank" rel="noopener"><span class="src">Blog de Teatro &middot; 2009</span><h4>Bernardo Cappa: Los Rocabilis y Amor a tiros</h4><p>Por estas obras recibi&oacute; el Premio Teatro del Mundo a mejor actor (2009).</p><span class="go">Leer m&aacute;s &rarr;</span></a>
+    <a class="prensa-card" href="https://www.revistaotraparte.com/teatro/la-maquina-idiota/" target="_blank" rel="noopener"><span class="src">Revista Otra Parte</span><h4>La m&aacute;quina idiota, de Ricardo Bart&iacute;s</h4><p>Cr&iacute;tica del montaje del Sportivo Teatral, con Mogordoy en el elenco.</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
+  </div>
+
+  <h3 class="prensa-h">Notas y entrevistas</h3>
+  <div class="prensa-grid">
+    <a class="prensa-card" href="https://www.lanacion.com.ar/espectaculos/cine/sebastian-mogordoy-actor-quedo-varado-europa-su-nid2415087/" target="_blank" rel="noopener"><span class="src">La Naci&oacute;n &middot; 2022</span><h4>El actor que qued&oacute; varado en Europa y su vida es una aventura</h4><p>&ldquo;Uno de los actores m&aacute;s interesantes y originales de su generaci&oacute;n.&rdquo;</p><span class="go">Leer nota &rarr;</span></a>
+    <a class="prensa-card" href="https://www.lacapital.com.ar/pandemia/un-actor-funense-varado-espana-trabaja-alla-pero-anora-el-regreso-n2596627.html" target="_blank" rel="noopener"><span class="src">La Capital &middot; Rosario</span><h4>Un actor funense varado en Espa&ntilde;a a&ntilde;ora el regreso</h4><p>Su historia durante la pandemia, desde Catalu&ntilde;a.</p><span class="go">Leer nota &rarr;</span></a>
+    <a class="prensa-card" href="https://en.ara.cat/culture/ferran-utzet-wants-to-do-justice-to-nobel-laureate-jon-fosse-with-the-son_1_5724408.html" target="_blank" rel="noopener"><span class="src">ARA &middot; 2026</span><h4>Ferran Utzet lleva a Jon Fosse al Teatre Lliure</h4><p>Una tonalidad argentina aportada por Sebasti&aacute;n Mogordoy.</p><span class="go">Leer nota &rarr;</span></a>
+    <a class="prensa-card" href="https://www.infobae.com/america/agencias/2025/11/25/teatros-del-canal-acoge-el-9-de-diciembre-el-estreno-en-madrid-de-euforia-y-desazon-del-argentino-sergio-boris/" target="_blank" rel="noopener"><span class="src">Infobae &middot; 2025</span><h4>Euforia y desaz&oacute;n se estrena en Madrid</h4><p>Estreno en los Teatros del Canal, dirigido por Sergio Boris.</p><span class="go">Leer nota &rarr;</span></a>
+    <a class="prensa-card" href="https://cinemagavia.es/el-fill-teatre-lliure/" target="_blank" rel="noopener"><span class="src">Cinemagavia &middot; 2026</span><h4>El fill en el Teatre Lliure</h4><p>Cobertura del estreno de la obra de Jon Fosse.</p><span class="go">Leer nota &rarr;</span></a>
+    <a class="prensa-card" href="https://www.buenosaires.gob.ar/noticias/se-estrena-el-inspector-en-el-teatro-san-martin" target="_blank" rel="noopener"><span class="src">BA Ciudad &middot; 2017</span><h4>Se estren&oacute; El inspector en el Teatro San Mart&iacute;n</h4><p>Versi&oacute;n y direcci&oacute;n de Daniel Veronese; Mogordoy en el elenco.</p><span class="go">Leer nota &rarr;</span></a>
+  </div>
+
+  <h3 class="prensa-h">En video</h3>
+  <div class="prensa-grid">
+    <a class="prensa-card" onclick="openVid({type:'yt',id:'jg_E44BhDgE'})"><span class="src">Entrevista</span><h4>Entrevista en V&iacute;a Rosario</h4><p>Charla televisiva sobre su carrera.</p><span class="go">&#9654; Ver &rarr;</span></a>
+    <a class="prensa-card" onclick="openVid({type:'yt',id:'IiVPXFObSos'})"><span class="src">TV</span><h4>Nin&iacute; &mdash; nota en AM</h4><p>Cobertura del estreno teatral.</p><span class="go">&#9654; Ver &rarr;</span></a>
+  </div>
+
+  <h3 class="prensa-h">Perfiles y fichas</h3>
+  <div class="prensa-chips">
+    <a class="prensa-chip" href="https://www.imdb.com/name/nm3361869/" target="_blank" rel="noopener">IMDb</a>
+    <a class="prensa-chip" href="https://www.filmaffinity.com/us/name.php?name-id=505348686" target="_blank" rel="noopener">FilmAffinity</a>
+    <a class="prensa-chip" href="https://www.sensacine.com/actores/actor-615474/" target="_blank" rel="noopener">SensaCine</a>
+    <a class="prensa-chip" href="https://cinenacional.com/persona/sebastian-mogordoy" target="_blank" rel="noopener">Cine Nacional</a>
+    <a class="prensa-chip" href="https://mubi.com/es/cast/sebastian-mogordoy-10" target="_blank" rel="noopener">MUBI</a>
+    <a class="prensa-chip" href="https://www.themoviedb.org/person/1084678-sebastian-mogordoy" target="_blank" rel="noopener">TMDB</a>
+    <a class="prensa-chip" href="http://www.alternativateatral.com/persona1759-sebastian-mogordoy" target="_blank" rel="noopener">Alternativa Teatral</a>
+    <a class="prensa-chip" href="https://es.wikipedia.org/wiki/Sebasti%C3%A1n_Mogordoy" target="_blank" rel="noopener">Wikipedia</a>
   </div>
 </div></section>
 
