@@ -18,7 +18,8 @@ html,body{background:#0c0c0d;color:var(--ink);font-family:'Inter',system-ui,sans
 .bg{position:absolute;inset:0;background-size:cover;background-position:center 42%;filter:grayscale(1) contrast(1.12) brightness(.95);z-index:0}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,13,.55) 0%,rgba(12,12,13,.2) 34%,rgba(12,12,13,.5) 60%,rgba(12,12,13,.9) 82%,#0c0c0d 100%);z-index:1}
 .inner{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:0 32px 64px;text-align:center}
-.herometa{margin-bottom:18px;text-align:center}
+.col{display:inline-block;text-align:center}
+.herometa{margin-bottom:2px;text-align:left;padding-left:6px}
 .imdb-btn img{height:26px;width:auto;display:inline-block}
 .kicker{font-size:clamp(13px,1.5vw,17px);font-weight:500;color:#efece4;border-left:3px solid var(--accent);padding-left:14px;max-width:540px;line-height:1.45;margin-bottom:26px}
 .hero h1{font-family:'Archivo Black';font-weight:400;font-size:clamp(46px,12vw,150px);line-height:.82;letter-spacing:-.015em;text-transform:uppercase}
@@ -44,7 +45,7 @@ html,body{background:#0c0c0d;color:var(--ink);font-family:'Inter',system-ui,sans
 <header class="hero">
   <iframe id="heroVid" class="bgvid" allow="autoplay; fullscreen" title="Reel" style="display:none"></iframe>
   <div class="bg" id="heroBg" style="display:none"></div>
-  <div class="inner">
+  <div class="inner"><div class="col">
     <div class="herometa"><a class="imdb-btn" href="https://www.imdb.com/name/nm3361869/" target="_blank" rel="noopener" aria-label="Ver perfil en IMDb"><img src="assets/logos/imdb.png" alt="IMDb"></a></div>
     <h1>Sebastián<br>Mogordoy</h1>
     <p class="tag">Treinta años en escena, entre Buenos Aires y Barcelona.</p>
@@ -52,7 +53,7 @@ html,body{background:#0c0c0d;color:var(--ink);font-family:'Inter',system-ui,sans
       <a class="btn fill" href="#" onclick="sel('reel');return false">&#9654;&nbsp; Ver reel</a>
       <a class="btn line" href="#">Contratación</a>
     </div>
-  </div>
+   </div></div>
   <div class="switch" id="sw">
     <button data-type="reel">&#9654; Reel</button>
     <button data-img="assets/photos/bio_03.jpg" data-pos="center 42%">La mirada</button>
