@@ -14,19 +14,22 @@
 html,body{background:#0c0c0d;color:var(--ink);font-family:'Inter',system-ui,sans-serif;overflow-x:hidden}
 .note{position:fixed;top:0;left:0;right:0;z-index:20;background:#16110f;border-bottom:1px solid rgba(255,82,48,.4);color:#e7d9d2;font-size:12px;letter-spacing:.04em;text-align:center;padding:8px 14px}
 .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
-.bg{position:absolute;inset:0;background-size:cover;background-position:center 28%;filter:grayscale(1) contrast(1.18) brightness(.92);transition:background-image .4s ease, opacity .4s ease}
+.bgvid{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;border:0;pointer-events:none;z-index:0}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center 42%;filter:grayscale(1) contrast(1.12) brightness(.95);z-index:0}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,13,.55) 0%,rgba(12,12,13,.2) 34%,rgba(12,12,13,.5) 60%,rgba(12,12,13,.9) 82%,#0c0c0d 100%);z-index:1}
-.inner{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:0 32px 64px}
-.kicker{font-family:'Inter';font-size:clamp(13px,1.5vw,17px);font-weight:500;letter-spacing:.01em;color:#efece4;border-left:3px solid var(--accent);padding-left:14px;max-width:540px;line-height:1.45;margin-bottom:26px}
+.inner{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:0 32px 64px;text-align:center}
+.herometa{margin-bottom:18px;text-align:center}
+.imdb-btn img{height:26px;width:auto;display:inline-block}
+.kicker{font-size:clamp(13px,1.5vw,17px);font-weight:500;color:#efece4;border-left:3px solid var(--accent);padding-left:14px;max-width:540px;line-height:1.45;margin-bottom:26px}
 .hero h1{font-family:'Archivo Black';font-weight:400;font-size:clamp(46px,12vw,150px);line-height:.82;letter-spacing:-.015em;text-transform:uppercase}
 .roles{font-family:'Archivo Black';font-weight:400;text-transform:uppercase;font-size:clamp(13px,1.7vw,21px);letter-spacing:.06em;color:var(--accent);margin-top:18px}
 .tag{font-size:clamp(14px,1.6vw,18px);color:#cfcabf;margin-top:12px}
-.cta{margin-top:30px;display:flex;gap:13px;flex-wrap:wrap}
+.cta{margin-top:30px;display:flex;gap:13px;flex-wrap:wrap;justify-content:center}
 .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:2px;font-family:'Archivo Black';font-size:12px;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:.2s}
 .btn.fill{background:var(--accent);color:#1a0a05}
 .btn.line{border:1px solid rgba(244,241,234,.25);color:var(--ink)}
 .switch{position:absolute;z-index:3;right:24px;bottom:22px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
-.switch button{background:rgba(12,12,13,.6);backdrop-filter:blur(4px);border:1px solid rgba(244,241,234,.22);color:#cfcabf;font-family:'Inter';font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:8px 12px;border-radius:3px;cursor:pointer;transition:.2s}
+.switch button{background:rgba(12,12,13,.6);backdrop-filter:blur(4px);border:1px solid rgba(244,241,234,.22);color:#cfcabf;font-family:'Inter';font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:8px 12px;border-radius:3px;cursor:pointer;transition:.2s;display:inline-flex;align-items:center;gap:6px}
 .switch button.on{border-color:var(--accent);color:#fff}
 .switch button:hover{color:#fff}
 @media(max-width:640px){
@@ -37,34 +40,52 @@ html,body{background:#0c0c0d;color:var(--ink);font-family:'Inter',system-ui,sans
 </style>
 </head>
 <body>
-<div class="note">Versión de PRUEBA del hero (no enlazada). Comparala con la home actual. — <a href="https://www.sebastianmogordoy.com" style="color:#ff5230">ver home actual</a></div>
+<div class="note">Versión de PRUEBA del hero (no enlazada). — <a href="https://www.sebastianmogordoy.com" style="color:#ff5230">ver home actual</a></div>
 <header class="hero">
-  <div class="bg" id="heroBg" style="background-image:url('assets/photos/bio_03.jpg')"></div>
+  <iframe id="heroVid" class="bgvid" allow="autoplay; fullscreen" title="Reel" style="display:none"></iframe>
+  <div class="bg" id="heroBg" style="display:none"></div>
   <div class="inner">
-    <p class="kicker">Si no te quema la sangre, no es teatro: es mentira.</p>
+    <div class="herometa"><a class="imdb-btn" href="https://www.imdb.com/name/nm3361869/" target="_blank" rel="noopener" aria-label="Ver perfil en IMDb"><img src="assets/logos/imdb.png" alt="IMDb"></a></div>
     <h1>Sebastián<br>Mogordoy</h1>
-    <p class="roles">Actor · Director · Pedagogo teatral</p>
     <p class="tag">Treinta años en escena, entre Buenos Aires y Barcelona.</p>
     <div class="cta">
-      <a class="btn fill" href="#">&#9654;&nbsp; Ver reel</a>
+      <a class="btn fill" href="#" onclick="sel('reel');return false">&#9654;&nbsp; Ver reel</a>
       <a class="btn line" href="#">Contratación</a>
     </div>
   </div>
   <div class="switch" id="sw">
-    <button data-img="assets/photos/bio_03.jpg" class="on">La mirada</button>
-    <button data-img="assets/photos/bloque_dos_euforia_2.jpg">Euforia</button>
-    <button data-img="assets/photos/bloque_dos_elfill_1.jpg">El Fill</button>
-    <button data-img="assets/photos/bloque_dos_corazonada_1.jpg">La corazonada</button>
+    <button data-type="reel">&#9654; Reel</button>
+    <button data-img="assets/photos/bio_03.jpg" data-pos="center 42%">La mirada</button>
+    <button data-img="assets/photos/euforia_2_hi.jpg" data-pos="center 35%">Euforia</button>
+    <button data-img="assets/photos/elfill_1_hi.jpg" data-pos="center 28%">El Fill</button>
+    <button data-img="assets/photos/corazonada_1_hi.jpg" data-pos="center 30%">La corazonada</button>
   </div>
-</header>
 <script>
-var bg=document.getElementById('heroBg');
-document.getElementById('sw').addEventListener('click',function(e){
-  var b=e.target.closest('button');if(!b)return;
-  bg.style.backgroundImage="url('"+b.dataset.img+"')";
-  [].forEach.call(this.querySelectorAll('button'),function(x){x.classList.remove('on')});
-  b.classList.add('on');
+var vid=document.getElementById('heroVid'),bg=document.getElementById('heroBg'),sw=document.getElementById('sw');
+var btns=[].slice.call(sw.querySelectorAll('button'));
+function mark(b){btns.forEach(function(x){x.classList.remove('on')});if(b)b.classList.add('on');}
+function showReel(){
+  if(!vid.src) vid.src="https://player.vimeo.com/video/624294626?background=1&autoplay=1&loop=1&muted=1&dnt=1";
+  vid.style.display='block';bg.style.display='none';
+}
+function showImg(src,pos){
+  vid.style.display='none';
+  bg.style.backgroundImage="url('"+src+"')";if(pos)bg.style.backgroundPosition=pos;
+  bg.style.display='block';
+}
+function sel(type,b){
+  if(type==='reel'){showReel();mark(btns[0]);}
+  else{showImg(b.dataset.img,b.dataset.pos);mark(b);}
+}
+sw.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+  if(b.dataset.type==='reel') sel('reel'); else sel('img',b);
 });
+(function(){
+  var pool=['reel','reel','reel','reel','reel',btns[1],btns[2],btns[3],btns[4]];
+  var pick=pool[Math.floor(Math.random()*pool.length)];
+  if(pick==='reel') sel('reel'); else sel('img',pick);
+})();
 </script>
+</header>
 </body>
 </html>
