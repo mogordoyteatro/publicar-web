@@ -265,6 +265,25 @@ section.dark{background:var(--bg2)}
 .cv-collapse[open] .cv-open{display:none}
 .cv-collapse[open] .cv-close{display:inline}
 .cv-collapse .cv-grid{padding-bottom:10px}
+.tray{border-top:0;margin-top:0}
+.tray summary.tray-toggle{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 26px;border:1px solid var(--line);border-radius:9px;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(22px,3.4vw,40px);line-height:1;letter-spacing:-.01em;color:var(--ink);transition:.2s;background:rgba(255,255,255,.02)}
+.tray summary.tray-toggle::-webkit-details-marker{display:none}
+.tray summary.tray-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.tray .cv-arrow{color:var(--accent);transition:transform .25s;font-size:.5em;flex-shrink:0}
+.tray[open] summary.tray-toggle{border-color:var(--accent);border-bottom-left-radius:0;border-bottom-right-radius:0}
+.tray[open] .cv-arrow{transform:rotate(180deg)}
+.tray-body{padding:30px 4px 0}
+.tray-intro{font-size:clamp(15px,1.4vw,18px);line-height:1.7;color:#d8d3c8;max-width:920px;margin-bottom:36px}
+.tray-intro b{color:var(--ink);font-weight:500}
+.tray-films-h{display:block;margin:42px 0 16px}
+.films-mini{grid-template-columns:repeat(auto-fill,minmax(116px,1fr));gap:10px}
+.films-mini .film-info{padding:7px 1px 0}
+.films-mini .film-info h3{font-size:11px;line-height:1.06}
+.films-mini .film-info p{font-size:10px;margin-top:2px}
+.films-mini .film-tag{font-size:8px;padding:2px 7px;top:6px;left:6px}
+.films-mini .film-play{font-size:22px}
+.films-mini .film-watch{font-size:8px;letter-spacing:.08em;bottom:7px}
+@media(max-width:760px){.films-mini{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 .gal{column-count:5;column-gap:10px;padding:0 10px}
 @media(min-width:1700px){.gal{column-count:6}}
@@ -435,7 +454,6 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
       <a href="#bio">Bio</a>
       <a href="#cv">Trayectoria</a>
       <a href="#talleres">Talleres</a>
-      <a href="#filmografia">Cine · TV · Teatro</a>
       <a href="#prensa">Prensa</a>
       <a href="#textos">Dramaturgia</a>
       <a href="#galeria">Galería</a>
@@ -589,10 +607,10 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 </div></section>
 
 <section id="cv"><div class="wrap">
-  <p class="eyebrow">Currículum</p>
-  <h2 class="sec">Trayectoria</h2>
-  <details class="cv-collapse">
-    <summary><span class="cv-open">Ver trayectoria completa</span><span class="cv-close">Cerrar trayectoria</span> <span class="cv-arrow">&#9662;</span></summary>
+  <details class="cv-collapse tray">
+    <summary class="tray-toggle"><span class="tray-label">Trayectoria</span><span class="cv-arrow">&#9662;</span></summary>
+  <div class="tray-body">
+  <p class="tray-intro">Sebastián Mogordoy es un actor, director y docente argentino con treinta años de trayectoria entre Buenos Aires y Barcelona. Formó parte del elenco protagónico de <b>La corazonada</b> (Netflix, 2020) —primera producción original de la plataforma en Argentina— junto a Joaquín Furriel y Luisana Lopilato, y participó en films como <b>El robo del siglo</b> (Ariel Winograd), <b>Metegol</b> (Juan José Campanella), <b>Diablo</b> y <b>El eslabón podrido</b>. En teatro trabajó con directores como Ricardo Bartís, Daniel Veronese y Sergio Boris; con <b>La máquina idiota</b> (Bartís) participó del Festival Internacional de Buenos Aires y del Primer Festival de Teatro de Asia, en Corea. Actualmente desarrolla su carrera en España. Sus trabajos más recientes son <b>El Fill</b> (dir. Ferran Utzet), de estreno en el Teatre Lliure, y <b>El profesor</b> (dir. Daniel Castro), de próximo estreno; junto a <b>Euforia y desazón</b> (dir. Sergio Boris), presentada en el Festival Temporada Alta, la Sala Beckett y los Teatros del Canal. Recibió el <b>Premio Teatro del Mundo a mejor actor</b> (2009). Hace quince años dirige sus talleres de teatro y entrenamiento actoral, los últimos cinco en Barcelona.</p>
   <div class="cv-grid">
     <div class="cv-block">
       <h4>Teatro</h4>
@@ -651,23 +669,8 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
       </ul>
     </div>
   </div>
-  </details>
-</div></section>
-
-<section id="talleres" class="tallervideo">
-  <div class="tv-bg"><video src="https://talleresdeteatro.es/hero-nuevo-1080p-web.mp4" autoplay loop muted playsinline preload="auto"></video></div>
-  <div class="tv-overlay">
-    <p class="eyebrow">Docencia</p>
-    <img class="tv-logo" src="https://talleresdeteatro.es/imagenes_optimizadas/logo-talleres-de-teatro-barcelona.jpg" alt="Talleres de Teatro Barcelona">
-    <p class="tv-text">Hace quince años dirijo talleres de teatro y entrenamiento actoral; los últimos cinco, en Barcelona. Un espacio para poner el cuerpo en riesgo y encontrar la verdad del juego escénico.</p>
-    <a class="btn fill" href="https://www.talleresdeteatro.es" target="_blank" rel="noopener">Conocé los talleres &nbsp;&rarr;</a>
-  </div>
-</section>
-
-<section id="filmografia"><div class="wrap">
-  <p class="eyebrow">Filmografía</p>
-  <h2 class="sec">Cine · TV · Teatro</h2>
-  <div class="films">
+  <p class="eyebrow tray-films-h">Filmografía en video</p>
+  <div class="films films-mini">
 <a class="film" href="https://www.youtube.com/watch?v=EZqxB_GLLC8" onclick="openVid({type:'yt',id:'EZqxB_GLLC8'});return false;"><div class="film-img film-clip"><img src="https://i.ytimg.com/vi/EZqxB_GLLC8/hqdefault.jpg" alt="Reel" loading="lazy" class="film-thumb"><span class="film-tag">Reel</span><span class="film-play">&#9654;</span><span class="film-watch">Ver escena</span></div><div class="film-info"><h3>Reel</h3><p>Demo actoral</p></div></a>
 <a class="film" href="https://www.imdb.com/title/tt38786367/" target="_blank" rel="noopener"><div class="film-img film-clip"><span class="film-mk"></span><span class="film-tag">Netflix</span><span class="film-play">&#9654;</span><span class="film-watch">Ver en IMDb</span></div><div class="film-info"><h3>El profesor</h3><p>próx. &middot; Dir. Daniel Castro</p></div></a>
 <a class="film" href="https://www.youtube.com/watch?v=0l5EfR2RkR4" onclick="openVid({type:'yt',id:'0l5EfR2RkR4'});return false;"><div class="film-img film-clip"><img src="https://i.ytimg.com/vi/0l5EfR2RkR4/hqdefault.jpg" alt="La corazonada" loading="lazy" class="film-thumb"><span class="film-tag">Netflix</span><span class="film-play">&#9654;</span><span class="film-watch">Ver trailer</span></div><div class="film-info"><h3>La corazonada</h3><p>2020 &middot; Ordóñez</p></div></a>
@@ -710,7 +713,19 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 <a class="film" href="https://www.youtube.com/watch?v=vQyPPN08A1s" onclick="openVid({type:'yt',id:'vQyPPN08A1s'});return false;"><div class="film-img film-clip"><img src="https://i.ytimg.com/vi/vQyPPN08A1s/hqdefault.jpg" alt="Niní AM" loading="lazy" class="film-thumb"><span class="film-tag">Prensa</span><span class="film-play">&#9654;</span><span class="film-watch">Ver escena</span></div><div class="film-info"><h3>Niní AM</h3><p>Prensa TV</p></div></a>
 <a class="film" href="https://www.youtube.com/watch?v=UsSpYrCKOWI" onclick="openVid({type:'yt',id:'UsSpYrCKOWI'});return false;"><div class="film-img film-clip"><img src="https://i.ytimg.com/vi/UsSpYrCKOWI/hqdefault.jpg" alt="Backstage Niní" loading="lazy" class="film-thumb"><span class="film-tag">Backstage</span><span class="film-play">&#9654;</span><span class="film-watch">Ver escena</span></div><div class="film-info"><h3>Backstage Niní</h3><p>Detrás de escena</p></div></a>
   </div>
+  </div>
+  </details>
 </div></section>
+
+<section id="talleres" class="tallervideo">
+  <div class="tv-bg"><video src="https://talleresdeteatro.es/hero-nuevo-1080p-web.mp4" autoplay loop muted playsinline preload="auto"></video></div>
+  <div class="tv-overlay">
+    <p class="eyebrow">Docencia</p>
+    <img class="tv-logo" src="https://talleresdeteatro.es/imagenes_optimizadas/logo-talleres-de-teatro-barcelona.jpg" alt="Talleres de Teatro Barcelona">
+    <p class="tv-text">Hace quince años dirijo talleres de teatro y entrenamiento actoral; los últimos cinco, en Barcelona. Un espacio para poner el cuerpo en riesgo y encontrar la verdad del juego escénico.</p>
+    <a class="btn fill" href="https://www.talleresdeteatro.es" target="_blank" rel="noopener">Conocé los talleres &nbsp;&rarr;</a>
+  </div>
+</section>
 
 <section id="prensa"><div class="wrap">
   <p class="eyebrow">Prensa</p>
