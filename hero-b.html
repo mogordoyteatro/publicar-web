@@ -15,7 +15,8 @@ html,body{background:#0c0c0d;color:var(--ink);font-family:'Inter',system-ui,sans
 .note{position:fixed;top:0;left:0;right:0;z-index:20;background:#16110f;border-bottom:1px solid rgba(255,82,48,.4);color:#e7d9d2;font-size:12px;letter-spacing:.04em;text-align:center;padding:8px 14px}
 .hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
 .bgvid{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;border:0;pointer-events:none;z-index:0}
-.bg{position:absolute;inset:0;background-size:cover;background-position:center 42%;filter:contrast(1.03) saturate(1.06);z-index:0}
+.bg{position:absolute;inset:0;background-size:cover;filter:contrast(1.03) saturate(1.06);z-index:0;opacity:0;transition:opacity 1s ease}
+.bg.show{opacity:1}
 .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,13,.55) 0%,rgba(12,12,13,.2) 34%,rgba(12,12,13,.5) 60%,rgba(12,12,13,.9) 82%,#0c0c0d 100%);z-index:1}
 .inner{position:relative;z-index:2;width:100%;max-width:1180px;margin:0 auto;padding:0 32px 64px;text-align:center}
 .col{display:inline-block;text-align:center}
@@ -44,7 +45,8 @@ html,body{background:#0c0c0d;color:var(--ink);font-family:'Inter',system-ui,sans
 <div class="note">Versión de PRUEBA del hero (no enlazada). — <a href="https://www.sebastianmogordoy.com" style="color:#ff5230">ver home actual</a></div>
 <header class="hero">
   <iframe id="heroVid" class="bgvid" allow="autoplay; fullscreen" title="Reel" style="display:none"></iframe>
-  <div class="bg" id="heroBg" style="display:none"></div>
+  <div class="bg" id="bgA"></div>
+  <div class="bg" id="bgB"></div>
   <div class="inner"><div class="col">
     <div class="herometa"><a class="imdb-btn" href="https://www.imdb.com/name/nm3361869/" target="_blank" rel="noopener" aria-label="Ver perfil en IMDb"><img src="assets/logos/imdb.png" alt="IMDb"></a></div>
     <h1>Sebastián<br>Mogordoy</h1>
@@ -60,7 +62,8 @@ html,body{background:#0c0c0d;color:var(--ink);font-family:'Inter',system-ui,sans
     <button data-mode="euforia">Euforia</button>
   </div>
 <script>
-var vid=document.getElementById('heroVid'),bg=document.getElementById('heroBg'),sw=document.getElementById('sw');
+var vid=document.getElementById('heroVid'),sw=document.getElementById('sw');
+var layers=[document.getElementById('bgA'),document.getElementById('bgB')],front=0;
 var btns=[].slice.call(sw.querySelectorAll('button'));
 var euforia=[
  {i:'assets/photos/euforia1.jpg',p:'60% 32%',z:1.05},
@@ -73,8 +76,8 @@ var euforia=[
 var timer=null, ei=0;
 function mark(mode){btns.forEach(function(b){b.classList.toggle('on',b.dataset.mode===mode);});}
 function stopTimer(){if(timer){clearInterval(timer);timer=null;}}
-function setImg(src,pos,z){vid.style.display='none';bg.style.backgroundImage="url('"+src+"')";bg.style.backgroundPosition=pos;bg.style.transformOrigin=pos;bg.style.transform='scale('+(z||1)+')';bg.style.display='block';}
-function showReel(){stopTimer();bg.style.transform='none';if(!vid.src)vid.src="https://player.vimeo.com/video/624294626?background=1&autoplay=1&loop=1&muted=1&dnt=1";vid.style.display='block';bg.style.display='none';}
+function setImg(src,pos,z){vid.style.display='none';var back=layers[1-front];var im=new Image();im.onload=function(){back.style.backgroundImage="url('"+src+"')";back.style.backgroundPosition=pos;back.style.transformOrigin=pos;back.style.transform='scale('+(z||1)+')';void back.offsetWidth;back.classList.add('show');layers[front].classList.remove('show');front=1-front;};im.src=src;}
+function showReel(){stopTimer();layers[0].classList.remove('show');layers[1].classList.remove('show');if(!vid.src)vid.src="https://player.vimeo.com/video/624294626?background=1&autoplay=1&loop=1&muted=1&dnt=1";vid.style.display='block';}
 function showRetrato(){stopTimer();setImg('assets/photos/bio_03.jpg','center 42%',1);}
 function showEuforia(){stopTimer();ei=0;setImg(euforia[0].i,euforia[0].p,euforia[0].z);timer=setInterval(function(){ei=(ei+1)%euforia.length;setImg(euforia[ei].i,euforia[ei].p,euforia[ei].z);},4200);}
 function go(mode){mark(mode);if(mode==='reel')showReel();else if(mode==='retrato')showRetrato();else showEuforia();}
