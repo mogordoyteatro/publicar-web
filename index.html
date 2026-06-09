@@ -343,6 +343,15 @@ a.prensa-q:hover{border-left-color:#fff}
 a.prensa-q:hover blockquote{color:var(--accent)}
 a.prensa-lead{display:block;text-decoration:none}
 .prensa-h{font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:36px 0 16px}
+.prensa-collapse{margin:36px 0 0;border:1px solid var(--line);border-radius:9px;background:rgba(255,255,255,.02);overflow:hidden}
+.prensa-collapse>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 20px;font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(15px,1.9vw,22px);letter-spacing:.04em;color:var(--ink);transition:.2s}
+.prensa-collapse>summary::-webkit-details-marker{display:none}
+.prensa-collapse>summary:hover{color:var(--accent)}
+.prensa-collapse .pc-count{font-size:.6em;color:var(--muted);letter-spacing:.08em;margin-left:8px}
+.prensa-collapse .cv-arrow{color:var(--accent);transition:transform .25s;font-size:.7em;flex-shrink:0}
+.prensa-collapse[open]>summary{border-bottom:1px solid var(--line);color:var(--accent)}
+.prensa-collapse[open] .cv-arrow{transform:rotate(180deg)}
+.prensa-collapse .prensa-grid{padding:16px}
 .prensa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;align-items:start}
 .prensa-card{display:block;position:relative;min-height:94px;color:inherit;border:1px solid var(--line);border-radius:6px;padding:13px 14px 13px 99px;background:var(--bg2);transition:.2s;cursor:pointer;overflow:hidden}
 .prensa-card:not(:has(.prensa-thumb)){min-height:0;padding:15px 16px}
@@ -758,7 +767,8 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
     <a class="prensa-q" href="https://www.lanacion.com.ar/espectaculos/teatro/una-metafora-negra-del-pais-nid948608/" target="_blank" rel="noopener"><blockquote>&ldquo;Le aporta una rica complejidad a este perdedor nato.&rdquo;</blockquote><cite>La Naci&oacute;n &middot; La Funeraria &nearr;</cite></a>
   </div>
 
-  <h3 class="prensa-h">Cr&iacute;tica</h3>
+  <details class="prensa-collapse">
+  <summary><span>Cr&iacute;tica <span class="pc-count">11 textos</span></span><span class="cv-arrow">&#9662;</span></summary>
   <div class="prensa-grid">
     <a class="prensa-card" href="https://www.eldiario.es/cultura/teatro/euforia-desazon-retrato-teatral-descarnado-sociedad-argentina-milei-fondo_129_11705308.html" target="_blank" rel="noopener"><img class="prensa-thumb" src="https://static.eldiario.es/clip/9145a86d-adad-461b-9142-62c64ede5705_facebook-aspect-ratio-1200-675_default_0.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">elDiario.es &middot; 2025</span><h4>Euforia y desaz&oacute;n, un retrato descarnado de la sociedad argentina</h4><p>&ldquo;Menci&oacute;n especial para Mogordoy, que es de otro planeta.&rdquo; &mdash; Pablo Caruana</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
     <a class="prensa-card" href="https://www.lanacion.com.ar/espectaculos/teatro/cuando-lo-no-dicho-estalla-en-pedazos-nid1176267/" target="_blank" rel="noopener"><img class="prensa-thumb" src="https://img.alternativateatral.com/scripts/es/fotos/obras/resumen/000070143.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">La Naci&oacute;n &middot; Teatro</span><h4>Cuando lo no dicho estalla en pedazos</h4><p>Cr&iacute;tica de Amor a tiros, de Bernardo Cappa.</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
@@ -772,6 +782,8 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
     <a class="prensa-card" href="https://martinwullich.com/el-inspector-satira-politica/" target="_blank" rel="noopener"><img class="prensa-thumb" src="https://martinwullich.com/wp-content/uploads/2017/09/5fHaDP46RYnFTkW22HHU-.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">Mart&iacute;n Wullich</span><h4>El inspector, s&aacute;tira pol&iacute;tica</h4><p>Cr&iacute;tica del montaje de Daniel Veronese en el Teatro San Mart&iacute;n.</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
     <a class="prensa-card" href="https://www.lanacion.com.ar/espectaculos/teatro/una-metafora-negra-del-pais-nid948608/" target="_blank" rel="noopener"><img class="prensa-thumb" src="https://www.lanacion.com.ar/resizer/v2/LZOEHBFNTRHORGFEXEXZCZLUVQ.jpg?auth=655b7c099c1b8188cee9a484f6d461c0f3887addd9491a4d0515ee2f0af7e634&width=1200&quality=85&smart=true&height=675" alt="" loading="lazy" onerror="this.remove()"><span class="src">La Naci&oacute;n &middot; 2007</span><h4>Una met&aacute;fora negra del pa&iacute;s</h4><p>Cr&iacute;tica de La Funeraria (Cappa). &laquo;Nuestra opini&oacute;n: muy buena.&raquo;</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
   </div>
+
+  </details>
 
   <h3 class="prensa-h">Notas y entrevistas</h3>
   <div class="prensa-grid">
