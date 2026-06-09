@@ -98,18 +98,18 @@ header.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end
 .herobg{position:absolute;inset:0;background-size:cover;filter:contrast(1.03) saturate(1.06);z-index:1;opacity:0;transition:opacity 1s ease}
 .herobg.show{opacity:1}
 .herograd{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(12,12,13,.5) 0%,rgba(12,12,13,.18) 26%,rgba(12,12,13,.55) 52%,rgba(12,12,13,.86) 70%,rgba(12,12,13,.98) 100%)}
-.heroswitch{position:absolute;z-index:6;right:28px;bottom:52px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.heroswitch{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;flex-shrink:0}
 .heroswitch button{background:rgba(12,12,13,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:1px solid rgba(244,241,234,.22);color:#cfcabf;font-family:var(--sans);font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:8px 12px;border-radius:3px;cursor:pointer;transition:.2s}
 .heroswitch button.on{border-color:var(--accent);color:#fff}
 .heroswitch button:hover{color:#fff}
-@media(max-width:640px){.heroswitch{top:66px;left:14px;right:auto;bottom:auto;justify-content:flex-start;gap:6px}.heroswitch button{padding:7px 10px;font-size:10px}}
+@media(max-width:640px){.heroswitch{gap:5px}.heroswitch button{padding:6px 8px;font-size:9px;letter-spacing:.03em}}
 header.hero .inner{position:relative;z-index:3;padding-bottom:26px;width:100%}
 header.hero .inner .wrap{text-align:center}
 header.hero h1{display:inline-block;font-family:var(--display);font-weight:400;font-size:clamp(46px,11.5vw,146px);line-height:.8;letter-spacing:-.01em;text-transform:uppercase;max-width:100%;opacity:0;transition:opacity .35s ease}
 body.fonts-ready header.hero h1{opacity:1}
 .nl{display:block;text-align:center}
 .nl .nt{display:inline-block;transform-origin:center}
-.herometa{margin:0 auto 18px;text-align:left}
+.herometa{margin:0 auto 12px;display:flex;justify-content:space-between;align-items:center;gap:14px}
 .imdb-btn{display:inline-flex;align-items:center;transition:.2s}
 .imdb-btn img{height:26px;width:auto;display:block}
 .imdb-btn:hover{opacity:.85}
@@ -340,19 +340,22 @@ a.prensa-q:hover{border-left-color:#fff}
 a.prensa-q:hover blockquote{color:var(--accent)}
 a.prensa-lead{display:block;text-decoration:none}
 .prensa-h{font-family:var(--display);font-weight:400;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin:36px 0 16px}
-.prensa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
-.prensa-card{display:block;color:inherit;border:1px solid var(--line);border-radius:5px;padding:20px;background:var(--bg2);transition:.2s;cursor:pointer}
+.prensa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+.prensa-card{display:grid;grid-template-columns:72px 1fr;column-gap:13px;align-content:center;min-height:94px;color:inherit;border:1px solid var(--line);border-radius:6px;padding:11px 14px;background:var(--bg2);transition:.2s;cursor:pointer;overflow:hidden}
+.prensa-card:not(:has(.prensa-thumb)){grid-template-columns:1fr;min-height:0;padding:15px 16px}
 .prensa-card:hover{border-color:var(--accent);transform:translateY(-2px)}
-.prensa-card .src{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
-.prensa-card h4{font-family:var(--sans);font-weight:600;font-size:16px;line-height:1.32;margin:9px 0 7px;color:var(--ink)}
-.prensa-card p{font-size:13.5px;color:#cfcabf;line-height:1.5}
-.prensa-card .go{display:block;margin-top:13px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.prensa-thumb{grid-column:1;grid-row:1 / -1;align-self:center;width:72px;height:72px;object-fit:cover;border-radius:5px;margin:0;background:#0e0e10;filter:grayscale(.15)}
+.prensa-card>:not(.prensa-thumb){grid-column:2;min-width:0}
+.prensa-card:not(:has(.prensa-thumb))>:not(.prensa-thumb){grid-column:1}
+.prensa-card .src{font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.prensa-card h4{font-family:var(--sans);font-weight:600;font-size:14px;line-height:1.25;margin:3px 0 3px;color:var(--ink)}
+.prensa-card p{font-size:12px;color:#cfcabf;line-height:1.4;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.prensa-card .go{display:block;margin-top:6px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 .prensa-card:hover .go{color:var(--accent)}
 .prensa-chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:4px}
 .prensa-chip{border:1px solid var(--line);border-radius:3px;padding:9px 15px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);transition:.2s}
 .prensa-chip:hover{border-color:var(--accent);color:var(--accent)}
 @media(max-width:760px){.prensa-grid{grid-template-columns:1fr}}
-.prensa-thumb{display:block;width:calc(100% + 40px);margin:-20px -20px 14px;aspect-ratio:5/2;object-fit:cover;border-radius:5px 5px 0 0;background:#0e0e10;filter:grayscale(.15)}
 .prensa-pod{cursor:default}
 .prensa-pod .go a{color:var(--accent);cursor:pointer}
 .prensa-pod .go a:hover{text-decoration:underline}
@@ -484,7 +487,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
   <div class="herograd"></div>
   <button id="volbtn" class="volbtn" aria-label="Activar sonido del video"></button>
   <div class="inner"><div class="wrap">
-    <div class="herometa"><a class="imdb-btn" href="https://www.imdb.com/name/nm3361869/" target="_blank" rel="noopener" aria-label="Ver perfil en IMDb"><img src="assets/logos/imdb.png" alt="IMDb"></a></div>
+    <div class="herometa"><a class="imdb-btn" href="https://www.imdb.com/name/nm3361869/" target="_blank" rel="noopener" aria-label="Ver perfil en IMDb"><img src="assets/logos/imdb.png" alt="IMDb"></a><div class="heroswitch" id="heroSw"><button data-mode="reel">&#9654;&nbsp;Reel</button><button data-mode="retrato">Retrato</button><button data-mode="euforia">Euforia</button></div></div>
     <h1><span class="nl"><span class="nt">Sebastian</span></span><span class="nl"><span class="nt">Mogordoy</span></span></h1>
     <p class="tag">Treinta años en escena: teatro, cine y televisión. Entre Buenos Aires y Barcelona.</p>
     <div class="cta">
@@ -492,11 +495,6 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
       <a class="btn line" href="#contacto">Contratación</a>
     </div>
   </div></div>
-  <div class="heroswitch" id="heroSw">
-    <button data-mode="reel">&#9654;&nbsp;Reel</button>
-    <button data-mode="retrato">Retrato</button>
-    <button data-mode="euforia">Euforia</button>
-  </div>
   <div class="scrollhint">scroll &darr;</div>
 </header>
 
