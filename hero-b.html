@@ -63,20 +63,20 @@ html,body{background:#0c0c0d;color:var(--ink);font-family:'Inter',system-ui,sans
 var vid=document.getElementById('heroVid'),bg=document.getElementById('heroBg'),sw=document.getElementById('sw');
 var btns=[].slice.call(sw.querySelectorAll('button'));
 var euforia=[
- {i:'assets/photos/euforia1.jpg',p:'60% 32%'},
- {i:'assets/photos/euforia2.jpg',p:'48% 36%'},
- {i:'assets/photos/euforia3.jpg',p:'63% 42%'},
- {i:'assets/photos/euforia4.jpg',p:'58% 42%'},
- {i:'assets/photos/euforia5.jpg',p:'36% 40%'},
- {i:'assets/photos/euforia6.jpg',p:'55% 38%'}
+ {i:'assets/photos/euforia1.jpg',p:'60% 32%',z:1.05},
+ {i:'assets/photos/euforia2.jpg',p:'48% 36%',z:1.12},
+ {i:'assets/photos/euforia3.jpg',p:'63% 40%',z:1.55},
+ {i:'assets/photos/euforia4.jpg',p:'58% 42%',z:1.15},
+ {i:'assets/photos/euforia5.jpg',p:'37% 40%',z:1.4},
+ {i:'assets/photos/euforia6.jpg',p:'55% 38%',z:1.25}
 ];
 var timer=null, ei=0;
 function mark(mode){btns.forEach(function(b){b.classList.toggle('on',b.dataset.mode===mode);});}
 function stopTimer(){if(timer){clearInterval(timer);timer=null;}}
-function setImg(src,pos){vid.style.display='none';bg.style.backgroundImage="url('"+src+"')";bg.style.backgroundPosition=pos;bg.style.display='block';}
-function showReel(){stopTimer();if(!vid.src)vid.src="https://player.vimeo.com/video/624294626?background=1&autoplay=1&loop=1&muted=1&dnt=1";vid.style.display='block';bg.style.display='none';}
-function showRetrato(){stopTimer();setImg('assets/photos/bio_03.jpg','center 42%');}
-function showEuforia(){stopTimer();ei=0;setImg(euforia[0].i,euforia[0].p);timer=setInterval(function(){ei=(ei+1)%euforia.length;setImg(euforia[ei].i,euforia[ei].p);},4200);}
+function setImg(src,pos,z){vid.style.display='none';bg.style.backgroundImage="url('"+src+"')";bg.style.backgroundPosition=pos;bg.style.transformOrigin=pos;bg.style.transform='scale('+(z||1)+')';bg.style.display='block';}
+function showReel(){stopTimer();bg.style.transform='none';if(!vid.src)vid.src="https://player.vimeo.com/video/624294626?background=1&autoplay=1&loop=1&muted=1&dnt=1";vid.style.display='block';bg.style.display='none';}
+function showRetrato(){stopTimer();setImg('assets/photos/bio_03.jpg','center 42%',1);}
+function showEuforia(){stopTimer();ei=0;setImg(euforia[0].i,euforia[0].p,euforia[0].z);timer=setInterval(function(){ei=(ei+1)%euforia.length;setImg(euforia[ei].i,euforia[ei].p,euforia[ei].z);},4200);}
 function go(mode){mark(mode);if(mode==='reel')showReel();else if(mode==='retrato')showRetrato();else showEuforia();}
 sw.addEventListener('click',function(e){var b=e.target.closest('button');if(b)go(b.dataset.mode);});
 (function(){var pool=['reel','reel','reel','reel','reel','euforia','euforia','euforia','retrato'];go(pool[Math.floor(Math.random()*pool.length)]);})();
