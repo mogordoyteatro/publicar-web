@@ -352,6 +352,12 @@ a.prensa-lead{display:block;text-decoration:none}
 .prensa-collapse[open]>summary{border-bottom:1px solid var(--line);color:var(--accent)}
 .prensa-collapse[open] .cv-arrow{transform:rotate(180deg)}
 .prensa-collapse .prensa-grid{padding:16px}
+.prensa-main>summary{font-size:clamp(16px,2.1vw,25px);padding:20px 22px}
+.prensa-cbody{padding:2px 20px 24px}
+.prensa-cbody .prensa-grid{padding:0;margin-bottom:6px}
+.prensa-cbody .prensa-h{margin:32px 0 14px}
+.prensa-cbody .prensa-h:first-child{margin-top:16px}
+.prensa-cbody .prensa-chips{padding:0}
 .prensa-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px;align-items:start}
 .prensa-card{display:block;position:relative;min-height:94px;color:inherit;border:1px solid var(--line);border-radius:6px;padding:13px 14px 13px 99px;background:var(--bg2);transition:.2s;cursor:pointer;overflow:hidden}
 .prensa-card:not(:has(.prensa-thumb)){min-height:0;padding:15px 16px}
@@ -774,8 +780,10 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
     <a class="prensa-q" href="https://www.lanacion.com.ar/espectaculos/teatro/una-metafora-negra-del-pais-nid948608/" target="_blank" rel="noopener"><blockquote>&ldquo;Le aporta una rica complejidad a este perdedor nato.&rdquo;</blockquote><cite>La Naci&oacute;n &middot; La Funeraria &nearr;</cite></a>
   </div>
 
-  <details class="prensa-collapse">
-  <summary><span>Cr&iacute;tica <span class="pc-count">11 textos</span></span><span class="cv-arrow">&#9662;</span></summary>
+  <details class="prensa-collapse prensa-main">
+  <summary><span>Prensa, cr&iacute;ticas, notas y entrevistas</span><span class="cv-arrow">&#9662;</span></summary>
+  <div class="prensa-cbody">
+  <h3 class="prensa-h">Cr&iacute;tica</h3>
   <div class="prensa-grid">
     <a class="prensa-card" href="https://www.eldiario.es/cultura/teatro/euforia-desazon-retrato-teatral-descarnado-sociedad-argentina-milei-fondo_129_11705308.html" target="_blank" rel="noopener"><img class="prensa-thumb" src="https://static.eldiario.es/clip/9145a86d-adad-461b-9142-62c64ede5705_facebook-aspect-ratio-1200-675_default_0.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">elDiario.es &middot; 2025</span><h4>Euforia y desaz&oacute;n, un retrato descarnado de la sociedad argentina</h4><p>&ldquo;Menci&oacute;n especial para Mogordoy, que es de otro planeta.&rdquo; &middot; Pablo Caruana</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
     <a class="prensa-card" href="https://www.lanacion.com.ar/espectaculos/teatro/cuando-lo-no-dicho-estalla-en-pedazos-nid1176267/" target="_blank" rel="noopener"><img class="prensa-thumb" src="https://img.alternativateatral.com/scripts/es/fotos/obras/resumen/000070143.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">La Naci&oacute;n &middot; Teatro</span><h4>Cuando lo no dicho estalla en pedazos</h4><p>Cr&iacute;tica de Amor a tiros, de Bernardo Cappa.</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
@@ -790,10 +798,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
     <a class="prensa-card" href="https://www.lanacion.com.ar/espectaculos/teatro/una-metafora-negra-del-pais-nid948608/" target="_blank" rel="noopener"><img class="prensa-thumb" src="https://www.lanacion.com.ar/resizer/v2/LZOEHBFNTRHORGFEXEXZCZLUVQ.jpg?auth=655b7c099c1b8188cee9a484f6d461c0f3887addd9491a4d0515ee2f0af7e634&width=1200&quality=85&smart=true&height=675" alt="" loading="lazy" onerror="this.remove()"><span class="src">La Naci&oacute;n &middot; 2007</span><h4>Una met&aacute;fora negra del pa&iacute;s</h4><p>Cr&iacute;tica de La Funeraria (Cappa). &laquo;Nuestra opini&oacute;n: muy buena.&raquo;</p><span class="go">Leer cr&iacute;tica &rarr;</span></a>
   </div>
 
-  </details>
-
-  <details class="prensa-collapse">
-  <summary><span>Notas y entrevistas <span class="pc-count">7 piezas</span></span><span class="cv-arrow">&#9662;</span></summary>
+  <h3 class="prensa-h">Notas y entrevistas</h3>
   <div class="prensa-grid">
     <a class="prensa-card" href="https://www.lanacion.com.ar/espectaculos/cine/sebastian-mogordoy-actor-quedo-varado-europa-su-nid2415087/" target="_blank" rel="noopener"><img class="prensa-thumb" src="https://www.lanacion.com.ar/resizer/v2/sebastian-OSKDYIEXDVB3FJU2BVC4EF7CDA.jpg?auth=6c5c8e736020a83a5c8b7a8d58f7ef591391957574154c39e3dd9968ed12acda&width=1200&height=800&quality=70&smart=true" alt="" loading="lazy" onerror="this.remove()"><span class="src">La Naci&oacute;n &middot; 2022</span><h4>El actor que qued&oacute; varado en Europa y su vida es una aventura</h4><p>&ldquo;Uno de los actores m&aacute;s interesantes y originales de su generaci&oacute;n.&rdquo;</p><span class="go">Leer nota &rarr;</span></a>
     <a class="prensa-card" href="https://www.lacapital.com.ar/pandemia/un-actor-funense-varado-espana-trabaja-alla-pero-anora-el-regreso-n2596627.html" target="_blank" rel="noopener"><img class="prensa-thumb" src="https://media.lacapital.com.ar/p/82eb8b8412b0c0b61d25a7661b74c7c9/adjuntos/203/imagenes/028/501/0028501394/1200x675/smart/2020-07-11-pand-76048520jpg.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">La Capital &middot; Rosario</span><h4>Un actor funense varado en Espa&ntilde;a a&ntilde;ora el regreso</h4><p>Su historia durante la pandemia, desde Catalu&ntilde;a.</p><span class="go">Leer nota &rarr;</span></a>
@@ -804,17 +809,12 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
     <a class="prensa-card" href="https://www.buenosaires.gob.ar/noticias/se-estrena-el-inspector-en-el-teatro-san-martin" target="_blank" rel="noopener"><img class="prensa-thumb" src="https://martinwullich.com/wp-content/uploads/2017/09/5fHaDP46RYnFTkW22HHU-.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">BA Ciudad &middot; 2017</span><h4>Se estren&oacute; El inspector en el Teatro San Mart&iacute;n</h4><p>Versi&oacute;n y direcci&oacute;n de Daniel Veronese; Mogordoy en el elenco.</p><span class="go">Leer nota &rarr;</span></a>
   </div>
 
-  </details>
-
-  <details class="prensa-collapse">
-  <summary><span>En video y podcast <span class="pc-count">3 piezas</span></span><span class="cv-arrow">&#9662;</span></summary>
+  <h3 class="prensa-h">En video y podcast</h3>
   <div class="prensa-grid">
     <div class="prensa-card prensa-pod"><img class="prensa-thumb" src="https://i.ytimg.com/vi/LySziE2e950/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">Podcast &middot; La Encarnaci&oacute;n &middot; Ana Reich</span><h4>Episodio 4: Sebasti&aacute;n Mogordoy</h4><p>Entrevista en profundidad sobre su carrera de actor migrante (49 min).</p><span class="go"><a onclick="openVid({type:'yt',id:'LySziE2e950'})">&#9654; YouTube</a> &nbsp;&middot;&nbsp; <a href="https://open.spotify.com/episode/0sOthnV1kWNdeLAR6wxMDM" target="_blank" rel="noopener">Spotify &nearr;</a></span></div>
     <a class="prensa-card" onclick="openVid({type:'yt',id:'jg_E44BhDgE'})"><span class="src">Entrevista</span><h4>Entrevista en V&iacute;a Rosario</h4><p>Charla televisiva sobre su carrera.</p><span class="go">&#9654; Ver &rarr;</span></a>
     <a class="prensa-card" onclick="openVid({type:'yt',id:'IiVPXFObSos'})"><img class="prensa-thumb" src="https://i.ytimg.com/vi/IiVPXFObSos/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">TV</span><h4>Nin&iacute; &middot; nota en AM</h4><p>Cobertura del estreno teatral.</p><span class="go">&#9654; Ver &rarr;</span></a>
   </div>
-
-  </details>
 
   <h3 class="prensa-h">Perfiles y fichas</h3>
   <div class="prensa-chips">
@@ -827,6 +827,8 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
     <a class="prensa-chip" href="http://www.alternativateatral.com/persona1759-sebastian-mogordoy" target="_blank" rel="noopener">Alternativa Teatral</a>
     <a class="prensa-chip" href="https://es.wikipedia.org/wiki/Sebasti%C3%A1n_Mogordoy" target="_blank" rel="noopener">Wikipedia</a>
   </div>
+  </div>
+  </details>
 </div></section>
 
 
