@@ -50,42 +50,36 @@ html,body{background:#0c0c0d;color:var(--ink);font-family:'Inter',system-ui,sans
     <h1>Sebastián<br>Mogordoy</h1>
     <p class="tag">Treinta años en escena, entre Buenos Aires y Barcelona.</p>
     <div class="cta">
-      <a class="btn fill" href="#" onclick="sel('reel');return false">&#9654;&nbsp; Ver reel</a>
+      <a class="btn fill" href="#" onclick="go('reel');return false">&#9654;&nbsp; Ver reel</a>
       <a class="btn line" href="#">Contratación</a>
     </div>
    </div></div>
   <div class="switch" id="sw">
-    <button data-type="reel">&#9654; Reel</button>
-    <button data-img="assets/photos/bio_03.jpg" data-pos="center 42%">La mirada</button>
-    <button data-img="assets/photos/euforia_2_hi.jpg" data-pos="center 35%">Euforia</button>
-    <button data-img="assets/photos/elfill_1_hi.jpg" data-pos="center 28%">El Fill</button>
-    <button data-img="assets/photos/corazonada_1_hi.jpg" data-pos="center 30%">La corazonada</button>
+    <button data-mode="reel">&#9654; Reel</button>
+    <button data-mode="retrato">Retrato</button>
+    <button data-mode="euforia">Euforia</button>
   </div>
 <script>
 var vid=document.getElementById('heroVid'),bg=document.getElementById('heroBg'),sw=document.getElementById('sw');
 var btns=[].slice.call(sw.querySelectorAll('button'));
-function mark(b){btns.forEach(function(x){x.classList.remove('on')});if(b)b.classList.add('on');}
-function showReel(){
-  if(!vid.src) vid.src="https://player.vimeo.com/video/624294626?background=1&autoplay=1&loop=1&muted=1&dnt=1";
-  vid.style.display='block';bg.style.display='none';
-}
-function showImg(src,pos){
-  vid.style.display='none';
-  bg.style.backgroundImage="url('"+src+"')";if(pos)bg.style.backgroundPosition=pos;
-  bg.style.display='block';
-}
-function sel(type,b){
-  if(type==='reel'){showReel();mark(btns[0]);}
-  else{showImg(b.dataset.img,b.dataset.pos);mark(b);}
-}
-sw.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
-  if(b.dataset.type==='reel') sel('reel'); else sel('img',b);
-});
-(function(){
-  var pool=['reel','reel','reel','reel','reel',btns[1],btns[2],btns[3],btns[4]];
-  var pick=pool[Math.floor(Math.random()*pool.length)];
-  if(pick==='reel') sel('reel'); else sel('img',pick);
-})();
+var euforia=[
+ {i:'assets/photos/euforia1.jpg',p:'60% 32%'},
+ {i:'assets/photos/euforia2.jpg',p:'48% 36%'},
+ {i:'assets/photos/euforia3.jpg',p:'63% 42%'},
+ {i:'assets/photos/euforia4.jpg',p:'58% 42%'},
+ {i:'assets/photos/euforia5.jpg',p:'36% 40%'},
+ {i:'assets/photos/euforia6.jpg',p:'55% 38%'}
+];
+var timer=null, ei=0;
+function mark(mode){btns.forEach(function(b){b.classList.toggle('on',b.dataset.mode===mode);});}
+function stopTimer(){if(timer){clearInterval(timer);timer=null;}}
+function setImg(src,pos){vid.style.display='none';bg.style.backgroundImage="url('"+src+"')";bg.style.backgroundPosition=pos;bg.style.display='block';}
+function showReel(){stopTimer();if(!vid.src)vid.src="https://player.vimeo.com/video/624294626?background=1&autoplay=1&loop=1&muted=1&dnt=1";vid.style.display='block';bg.style.display='none';}
+function showRetrato(){stopTimer();setImg('assets/photos/bio_03.jpg','center 42%');}
+function showEuforia(){stopTimer();ei=0;setImg(euforia[0].i,euforia[0].p);timer=setInterval(function(){ei=(ei+1)%euforia.length;setImg(euforia[ei].i,euforia[ei].p);},4200);}
+function go(mode){mark(mode);if(mode==='reel')showReel();else if(mode==='retrato')showRetrato();else showEuforia();}
+sw.addEventListener('click',function(e){var b=e.target.closest('button');if(b)go(b.dataset.mode);});
+(function(){var pool=['reel','reel','reel','reel','reel','euforia','euforia','euforia','retrato'];go(pool[Math.floor(Math.random()*pool.length)]);})();
 </script>
 </header>
 </body>
