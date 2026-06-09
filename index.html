@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sebastián Mogordoy — Actor argentino en Barcelona | Cine, TV y Teatro</title>
-<meta name="description" content="Sebastián Mogordoy, actor, director y docente argentino radicado en Barcelona. Treinta años en teatro, cine y televisión (La corazonada, Netflix). Reel, filmografía completa y talleres de formación actoral.">
-<meta name="keywords" content="Sebastián Mogordoy, actor, actor argentino, actor argentino en España, actor en Barcelona, director teatral, dramaturgo, formación actoral, entrenamiento actoral, talleres de teatro Barcelona, La corazonada, Netflix, Ricardo Bartís, teatro Barcelona">
+<meta name="description" content="Sebastián Mogordoy, actor, director y profesor argentino radicado en Barcelona. Treinta años en teatro, cine y televisión (La corazonada, Netflix). Reel, filmografía completa y talleres de entrenamiento actoral.">
+<meta name="keywords" content="Sebastián Mogordoy, actor, actor argentino, actor argentino en España, actor en Barcelona, director teatral, dramaturgo, formación actoral, entrenamiento actoral, talleres de teatro Barcelona, clases de teatro Barcelona, profesor de teatro, taller de actuación, La corazonada, Netflix, Ricardo Bartís, teatro Barcelona">
 <meta name="author" content="Sebastián Mogordoy">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.sebastianmogordoy.com/">
@@ -15,12 +15,12 @@
 <meta property="og:site_name" content="Sebastián Mogordoy">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Sebastián Mogordoy — Actor argentino en Barcelona">
-<meta property="og:description" content="Actor, director y docente argentino en Barcelona. Treinta años en teatro, cine y TV (Netflix). Reel, filmografía y talleres de formación actoral.">
+<meta property="og:description" content="Actor y director argentino en Barcelona. Treinta años en teatro, cine y TV (Netflix). Reel, filmografía y talleres de entrenamiento actoral.">
 <meta property="og:url" content="https://www.sebastianmogordoy.com/">
 <meta property="og:image" content="https://www.sebastianmogordoy.com/assets/photos/bio_03.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sebastián Mogordoy — Actor argentino en Barcelona">
-<meta name="twitter:description" content="Actor, director y docente. Teatro, cine y TV entre Buenos Aires y Barcelona. Reel, filmografía y talleres.">
+<meta name="twitter:description" content="Actor y director. Teatro, cine y TV entre Buenos Aires y Barcelona. Reel, filmografía y talleres.">
 <meta name="twitter:image" content="https://www.sebastianmogordoy.com/assets/photos/bio_03.jpg">
 <script type="application/ld+json">
 {
@@ -28,11 +28,11 @@
   "@type": "Person",
   "name": "Sebastián Mogordoy",
   "alternateName": "Sebastián Eliseo Mogordoy",
-  "jobTitle": ["Actor", "Director teatral", "Docente de teatro"],
+  "jobTitle": ["Actor", "Director teatral", "Profesor de teatro"],
   "nationality": "Argentina",
   "url": "https://www.sebastianmogordoy.com/",
   "image": "https://www.sebastianmogordoy.com/assets/photos/bio_03.jpg",
-  "description": "Actor, director y docente argentino radicado en Barcelona, con treinta años de trayectoria en teatro, cine y televisión a ambos lados del Atlántico.",
+  "description": "Actor y director argentino radicado en Barcelona, con treinta años de trayectoria en teatro, cine y televisión a ambos lados del Atlántico.",
   "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES"},
   "worksFor": {"@type": "Organization", "name": "Talleres de Teatro Barcelona", "url": "https://www.talleresdeteatro.es"},
   "sameAs": ["https://www.imdb.com/name/nm3361869/", "https://www.talleresdeteatro.es"],
@@ -95,8 +95,15 @@ nav .links.open a:last-child{border-bottom:0}
 header.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden}
 .bgvid{position:absolute;inset:0;overflow:hidden;background:#000}
 .bgvid iframe{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;border:0;pointer-events:none}
-.bgvid:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,13,.5) 0%,rgba(12,12,13,.18) 26%,rgba(12,12,13,.55) 52%,rgba(12,12,13,.86) 70%,rgba(12,12,13,.98) 100%)}
-header.hero .inner{position:relative;z-index:2;padding-bottom:26px;width:100%}
+.herobg{position:absolute;inset:0;background-size:cover;filter:contrast(1.03) saturate(1.06);z-index:1;opacity:0;transition:opacity 1s ease}
+.herobg.show{opacity:1}
+.herograd{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(12,12,13,.5) 0%,rgba(12,12,13,.18) 26%,rgba(12,12,13,.55) 52%,rgba(12,12,13,.86) 70%,rgba(12,12,13,.98) 100%)}
+.heroswitch{position:absolute;z-index:6;right:28px;bottom:52px;display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.heroswitch button{background:rgba(12,12,13,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:1px solid rgba(244,241,234,.22);color:#cfcabf;font-family:var(--sans);font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:8px 12px;border-radius:3px;cursor:pointer;transition:.2s}
+.heroswitch button.on{border-color:var(--accent);color:#fff}
+.heroswitch button:hover{color:#fff}
+@media(max-width:640px){.heroswitch{left:18px;right:18px;justify-content:center;bottom:44px}}
+header.hero .inner{position:relative;z-index:3;padding-bottom:26px;width:100%}
 header.hero .inner .wrap{text-align:center}
 header.hero h1{display:inline-block;font-family:var(--display);font-weight:400;font-size:clamp(46px,11.5vw,146px);line-height:.8;letter-spacing:-.01em;text-transform:uppercase;max-width:100%;opacity:0;transition:opacity .35s ease}
 body.fonts-ready header.hero h1{opacity:1}
@@ -115,7 +122,7 @@ header.hero .tag{margin:16px auto 0;font-size:clamp(15px,1.9vw,21px);color:#efec
 .btn.fill:hover{transform:translateY(-2px)}
 .btn.line{border:1px solid var(--line);color:var(--ink)}
 .btn.line:hover{border-color:var(--ink)}
-.scrollhint{position:absolute;bottom:22px;right:28px;z-index:3;font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
+.scrollhint{position:absolute;bottom:22px;left:28px;z-index:3;font-size:11px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
 #statement{background:var(--bg)}
 .st-wrap{display:grid;grid-template-columns:1.3fr .62fr;gap:clamp(26px,4vw,54px);align-items:start}
 .statement-body{max-width:none;margin-top:14px}
@@ -345,7 +352,7 @@ a.prensa-lead{display:block;text-decoration:none}
 .prensa-chip{border:1px solid var(--line);border-radius:3px;padding:9px 15px;font-size:12px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink);transition:.2s}
 .prensa-chip:hover{border-color:var(--accent);color:var(--accent)}
 @media(max-width:760px){.prensa-grid{grid-template-columns:1fr}}
-.prensa-thumb{display:block;width:calc(100% + 40px);margin:-20px -20px 16px;aspect-ratio:16/9;object-fit:cover;border-radius:5px 5px 0 0;background:#0e0e10;filter:grayscale(.15)}
+.prensa-thumb{display:block;width:calc(100% + 40px);margin:-20px -20px 14px;aspect-ratio:5/2;object-fit:cover;border-radius:5px 5px 0 0;background:#0e0e10;filter:grayscale(.15)}
 .prensa-pod{cursor:default}
 .prensa-pod .go a{color:var(--accent);cursor:pointer}
 .prensa-pod .go a:hover{text-decoration:underline}
@@ -467,9 +474,12 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 </div></nav>
 
 <header class="hero" id="top">
-  <div class="bgvid">
+  <div class="bgvid" id="bgvid">
     <iframe id="bgvimeo" src="https://player.vimeo.com/video/624294626?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&playsinline=1&dnt=1" allow="autoplay; fullscreen" title="Reel de fondo"></iframe>
   </div>
+  <div class="herobg" id="hbgA"></div>
+  <div class="herobg" id="hbgB"></div>
+  <div class="herograd"></div>
   <button id="volbtn" class="volbtn" aria-label="Activar sonido del video"></button>
   <div class="inner"><div class="wrap">
     <div class="herometa"><a class="imdb-btn" href="https://www.imdb.com/name/nm3361869/" target="_blank" rel="noopener" aria-label="Ver perfil en IMDb"><img src="assets/logos/imdb.png" alt="IMDb"></a></div>
@@ -480,6 +490,11 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
       <a class="btn line" href="#contacto">Contratación</a>
     </div>
   </div></div>
+  <div class="heroswitch" id="heroSw">
+    <button data-mode="reel">&#9654;&nbsp;Reel</button>
+    <button data-mode="retrato">Retrato</button>
+    <button data-mode="euforia">Euforia</button>
+  </div>
   <div class="scrollhint">scroll &darr;</div>
 </header>
 
@@ -574,7 +589,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
       <p>Su enorme formación se consolidó en Buenos Aires, donde estudió en la Escuela de Teatro de Raúl Serrano y en el Instituto de Entrenamiento Actoral de Julio Chávez, completando además nueve años de entrenamiento en el prestigioso Sportivo Teatral bajo la dirección de Ricardo Bartís. Amplió su perfil explorando la dramaturgia con maestros como Mauricio Kartún y Javier Daulte.</p>
       <p>En el ámbito teatral, ha trabajado con directores de la talla de Daniel Veronese, Ricardo Bartís, Sergio Boris, Bernardo Cappa, Maruja Bustamante y actualmente con Ferran Utzet en Barcelona. Su labor interpretativa fue reconocida con el prestigioso Premio Teatro del Mundo a Mejor Actor.</p>
       <p>En la pantalla grande y la televisión, ha colaborado con destacados realizadores como Juan José Campanella, Ariel Winograd y Juan Taratuto, entre otros. Entre sus trabajos más relevantes se encuentra su participación en el elenco protagónico de La corazonada, la primera película original de Netflix en Argentina, así como en las producciones El robo del siglo, Metegol y las series El Tigre Verón, Silencios de familia y Niní. Actualmente formó parte del film El profesor, junto a Javier Gutiérrez, que se estrenará por Netflix.</p>
-      <p>Además de su faceta como actor y director, se desempeña desde hace quince años como docente, dictando talleres de teatro y entrenamiento actoral enfocados en la improvisación dirigida, espacio que refundó hace 5 años en Barcelona, luego de dirigir sus talleres durante 10 años en Argentina.</p>
+      <p>Además de su faceta como actor y director, desde hace quince años dirige talleres de teatro y entrenamiento actoral enfocados en la improvisación dirigida, espacio que refundó hace 5 años en Barcelona, luego de dirigir sus talleres durante 10 años en Argentina.</p>
       <div class="bio-btns">
         <a class="btn fill" href="assets/fotos-prensa-sebastian-mogordoy.zip" download>&#8595;&nbsp; Descargar fotos</a>
         <a class="btn line" href="assets/videos/videobook.mp4" download>&#8595;&nbsp; Descargar reel</a>
@@ -584,33 +599,11 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
   </div>
 </section>
 
-<section id="statement"><div class="wrap st-wrap">
-  <div class="statement-body">
-    <p class="eyebrow">En primera persona</p>
-    <div class="st-text" id="stText">
-      <p class="lead-p">Inicié mi camino en la actuación a los 13 años en Rosario y, desde entonces, mi carrera (mi vida) ha estado marcada por mi vínculo profundo con la actuación. Desde que comenzó siendo un juego, hasta hoy que lo hago de manera profesional y cobro por hacer eso que siempre hice desde pequeño: jugar, crear mundos, contar historias, habitar personajes. Y con el tiempo, comprender la actuación me llevó a explorar profundamente las capas de lo humano, del comportamiento, del gesto, de la creación, de lo vincular, del intercambio, con la mirada, con el otro… la conciencia de la imagen…</p>
-      <p>…es para mí, la actuación en sí misma, lo más importante de todo el recorrido. Y las personas, y las experiencias.</p>
-      <p>De niño jugaba. A los 13 actué por primera vez adelante del público y, desde ese año, lo hice para siempre.</p>
-      <p>A los 19, desde allá lejos, un día dije «quiero ser actor», me puse en acción y entonces comenzó esta historia que hoy, a los 50, me encuentra viviendo en España desde hace 5 años, y ver que ya actué en los escenarios más importantes de Barcelona y Madrid, no deja de sorprenderme.</p>
-      <p>Hoy, agradecido, feliz, miro hacia atrás y veo todo el recorrido al armar la página web, lo recuerdo todo y hago una pausa y respiro mirando a la vida a los ojos, diciéndole «ya no me debes nada». Ya no sueño con ser actor: lo soy, con todo lo que aprendí y todo lo que soy hoy. No miro atrás para volver, sino para saber desde dónde estoy parado. Y recién empiezo.</p>
-    </div>
-    <button class="st-more" type="button" onclick="toggleSt(this)">Leer más</button>
-    <p class="st-coda">A disfrutar de diluirse en esta substancia: <span class="hl">actuar</span>.</p>
-  </div>
-  <div class="statement-photos">
-    <img src="assets/photos/galeria/galeria_073.jpg" class="active" alt="Sebastián Mogordoy" loading="lazy">
-    <img src="assets/photos/galeria/galeria_010.jpg" alt="" loading="lazy">
-    <img src="assets/photos/galeria/galeria_024.jpg" alt="" loading="lazy">
-    <img src="assets/photos/galeria/galeria_059.jpg" alt="" loading="lazy">
-    <img src="assets/photos/galeria/galeria_063.jpg" alt="" loading="lazy">
-  </div>
-</div></section>
-
 <section id="cv"><div class="wrap">
   <details class="cv-collapse tray">
     <summary class="tray-toggle"><span class="tray-label">Trayectoria</span><span class="cv-arrow">&#9662;</span></summary>
   <div class="tray-body">
-  <p class="tray-intro">Sebastián Mogordoy es un actor, director y docente argentino con treinta años de trayectoria entre Buenos Aires y Barcelona. Formó parte del elenco protagónico de <b>La corazonada</b> (Netflix, 2020) —primera producción original de la plataforma en Argentina— junto a Joaquín Furriel y Luisana Lopilato, y participó en films como <b>El robo del siglo</b> (Ariel Winograd), <b>Metegol</b> (Juan José Campanella), <b>Diablo</b> y <b>El eslabón podrido</b>. En teatro trabajó con directores como Ricardo Bartís, Daniel Veronese y Sergio Boris; con <b>La máquina idiota</b> (Bartís) participó del Festival Internacional de Buenos Aires y del Primer Festival de Teatro de Asia, en Corea. Actualmente desarrolla su carrera en España. Sus trabajos más recientes son <b>El Fill</b> (dir. Ferran Utzet), de estreno en el Teatre Lliure, y <b>El profesor</b> (dir. Daniel Castro), de próximo estreno; junto a <b>Euforia y desazón</b> (dir. Sergio Boris), presentada en el Festival Temporada Alta, la Sala Beckett y los Teatros del Canal. Recibió el <b>Premio Teatro del Mundo a mejor actor</b> (2009). Hace quince años dirige sus talleres de teatro y entrenamiento actoral, los últimos cinco en Barcelona.</p>
+  <p class="tray-intro">Sebastián Mogordoy es un actor, director y profesor argentino con treinta años de trayectoria entre Buenos Aires y Barcelona. Formó parte del elenco protagónico de <b>La corazonada</b> (Netflix, 2020) —primera producción original de la plataforma en Argentina— junto a Joaquín Furriel y Luisana Lopilato, y participó en films como <b>El robo del siglo</b> (Ariel Winograd), <b>Metegol</b> (Juan José Campanella), <b>Diablo</b> y <b>El eslabón podrido</b>. En teatro trabajó con directores como Ricardo Bartís, Daniel Veronese y Sergio Boris; con <b>La máquina idiota</b> (Bartís) participó del Festival Internacional de Buenos Aires y del Primer Festival de Teatro de Asia, en Corea. Actualmente desarrolla su carrera en España. Sus trabajos más recientes son <b>El Fill</b> (dir. Ferran Utzet), de estreno en el Teatre Lliure, y <b>El profesor</b> (dir. Daniel Castro), de próximo estreno; junto a <b>Euforia y desazón</b> (dir. Sergio Boris), presentada en el Festival Temporada Alta, la Sala Beckett y los Teatros del Canal. Recibió el <b>Premio Teatro del Mundo a mejor actor</b> (2009). Hace quince años dirige sus talleres de teatro y entrenamiento actoral, los últimos cinco en Barcelona.</p>
   <div class="cv-grid">
     <div class="cv-block">
       <h4>Teatro</h4>
@@ -717,10 +710,32 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
   </details>
 </div></section>
 
+<section id="statement"><div class="wrap st-wrap">
+  <div class="statement-body">
+    <p class="eyebrow">En primera persona</p>
+    <div class="st-text" id="stText">
+      <p class="lead-p">Inicié mi camino en la actuación a los 13 años en Rosario y, desde entonces, mi carrera (mi vida) ha estado marcada por mi vínculo profundo con la actuación. Desde que comenzó siendo un juego, hasta hoy que lo hago de manera profesional y cobro por hacer eso que siempre hice desde pequeño: jugar, crear mundos, contar historias, habitar personajes. Y con el tiempo, comprender la actuación me llevó a explorar profundamente las capas de lo humano, del comportamiento, del gesto, de la creación, de lo vincular, del intercambio, con la mirada, con el otro… la conciencia de la imagen…</p>
+      <p>…es para mí, la actuación en sí misma, lo más importante de todo el recorrido. Y las personas, y las experiencias.</p>
+      <p>De niño jugaba. A los 13 actué por primera vez adelante del público y, desde ese año, lo hice para siempre.</p>
+      <p>A los 19, desde allá lejos, un día dije «quiero ser actor», me puse en acción y entonces comenzó esta historia que hoy, a los 50, me encuentra viviendo en España desde hace 5 años, y ver que ya actué en los escenarios más importantes de Barcelona y Madrid, no deja de sorprenderme.</p>
+      <p>Hoy, agradecido, feliz, miro hacia atrás y veo todo el recorrido al armar la página web, lo recuerdo todo y hago una pausa y respiro mirando a la vida a los ojos, diciéndole «ya no me debes nada». Ya no sueño con ser actor: lo soy, con todo lo que aprendí y todo lo que soy hoy. No miro atrás para volver, sino para saber desde dónde estoy parado. Y recién empiezo.</p>
+    </div>
+    <button class="st-more" type="button" onclick="toggleSt(this)">Leer más</button>
+    <p class="st-coda">A disfrutar de diluirse en esta substancia: <span class="hl">actuar</span>.</p>
+  </div>
+  <div class="statement-photos">
+    <img src="assets/photos/galeria/galeria_073.jpg" class="active" alt="Sebastián Mogordoy" loading="lazy">
+    <img src="assets/photos/galeria/galeria_010.jpg" alt="" loading="lazy">
+    <img src="assets/photos/galeria/galeria_024.jpg" alt="" loading="lazy">
+    <img src="assets/photos/galeria/galeria_059.jpg" alt="" loading="lazy">
+    <img src="assets/photos/galeria/galeria_063.jpg" alt="" loading="lazy">
+  </div>
+</div></section>
+
 <section id="talleres" class="tallervideo">
   <div class="tv-bg"><video src="https://talleresdeteatro.es/hero-nuevo-1080p-web.mp4" autoplay loop muted playsinline preload="auto"></video></div>
   <div class="tv-overlay">
-    <p class="eyebrow">Docencia</p>
+    <p class="eyebrow">Entrenamiento actoral</p>
     <img class="tv-logo" src="https://talleresdeteatro.es/imagenes_optimizadas/logo-talleres-de-teatro-barcelona.jpg" alt="Talleres de Teatro Barcelona">
     <p class="tv-text">Hace quince años dirijo talleres de teatro y entrenamiento actoral; los últimos cinco, en Barcelona. Un espacio para poner el cuerpo en riesgo y encontrar la verdad del juego escénico.</p>
     <a class="btn fill" href="https://www.talleresdeteatro.es" target="_blank" rel="noopener">Conocé los talleres &nbsp;&rarr;</a>
@@ -767,7 +782,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
   <h3 class="prensa-h">En video y podcast</h3>
   <div class="prensa-grid">
     <div class="prensa-card prensa-pod"><img class="prensa-thumb" src="https://i.ytimg.com/vi/LySziE2e950/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">Podcast &middot; La Encarnaci&oacute;n &middot; Ana Reich</span><h4>Episodio 4: Sebasti&aacute;n Mogordoy</h4><p>Entrevista en profundidad sobre su carrera de actor migrante (49 min).</p><span class="go"><a onclick="openVid({type:'yt',id:'LySziE2e950'})">&#9654; YouTube</a> &nbsp;&middot;&nbsp; <a href="https://open.spotify.com/episode/0sOthnV1kWNdeLAR6wxMDM" target="_blank" rel="noopener">Spotify &nearr;</a></span></div>
-    <a class="prensa-card" onclick="openVid({type:'yt',id:'jg_E44BhDgE'})"><img class="prensa-thumb" src="https://i.ytimg.com/vi/jg_E44BhDgE/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">Entrevista</span><h4>Entrevista en V&iacute;a Rosario</h4><p>Charla televisiva sobre su carrera.</p><span class="go">&#9654; Ver &rarr;</span></a>
+    <a class="prensa-card" onclick="openVid({type:'yt',id:'jg_E44BhDgE'})"><span class="src">Entrevista</span><h4>Entrevista en V&iacute;a Rosario</h4><p>Charla televisiva sobre su carrera.</p><span class="go">&#9654; Ver &rarr;</span></a>
     <a class="prensa-card" onclick="openVid({type:'yt',id:'IiVPXFObSos'})"><img class="prensa-thumb" src="https://i.ytimg.com/vi/IiVPXFObSos/hqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"><span class="src">TV</span><h4>Nin&iacute; &mdash; nota en AM</h4><p>Cobertura del estreno teatral.</p><span class="go">&#9654; Ver &rarr;</span></a>
   </div>
 
@@ -899,7 +914,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
   </div>
 </section>
 
-<footer><div class="wrap">© <span id="yr"></span> Sebastián Eliseo Mogordoy · Actor · Director · Docente</div></footer>
+<footer><div class="wrap">© <span id="yr"></span> Sebastián Eliseo Mogordoy · Actor · Director · Profesor</div></footer>
 
 <div id="lb">
   <span class="x" onclick="closeLb()">&times;</span>
@@ -945,6 +960,9 @@ setTimeout(revealHero,1800);
 function toggleSt(btn){var t=document.getElementById('stText');if(!t)return;var open=t.classList.toggle('expanded');btn.textContent=open?'Leer menos':'Leer más';}
 (function(){var imgs=document.querySelectorAll('.statement-photos img');if(imgs.length<2)return;var i=0;setInterval(function(){imgs[i].classList.remove('active');i=(i+1)%imgs.length;imgs[i].classList.add('active');},3600);})();
 
+function pruneBadThumbs(){document.querySelectorAll('.film-thumb,.prensa-thumb').forEach(function(im){function chk(){if(im.naturalWidth&&im.naturalWidth<=121){im.remove();}}if(im.complete)chk();else im.addEventListener('load',chk);});}
+window.addEventListener('load',pruneBadThumbs);setTimeout(pruneBadThumbs,2600);
+
 const pbgs=document.querySelectorAll('.parallax .pbg');
 function parallax(){const vh=window.innerHeight;pbgs.forEach(b=>{const el=b.parentElement;const r=el.getBoundingClientRect();if(r.bottom<-80||r.top>vh+80)return;const prog=(r.top+r.height/2-vh/2)/(vh+r.height);b.style.transform='translate3d(0,'+(prog*-20).toFixed(2)+'%,0)';});}
 function ploop(){parallax();requestAnimationFrame(ploop);}
@@ -983,6 +1001,33 @@ volBtn.innerHTML=ICON_MUTED;
 let bgMuted=true, bgPlayer=null;
 function initBg(){ if(window.Vimeo&&!bgPlayer){ bgPlayer=new Vimeo.Player(document.getElementById('bgvimeo')); } }
 volBtn.onclick=()=>{ initBg(); if(!bgPlayer) return; bgMuted=!bgMuted; bgPlayer.setMuted(bgMuted); if(!bgMuted){ bgPlayer.setVolume(1); } volBtn.innerHTML=bgMuted?ICON_MUTED:ICON_ON; volBtn.setAttribute('aria-label', bgMuted?'Activar sonido del video':'Silenciar video'); };
+
+(function(){
+  var bgvid=document.getElementById('bgvid'), sw=document.getElementById('heroSw');
+  if(!sw||!bgvid)return;
+  var btns=[].slice.call(sw.querySelectorAll('button'));
+  var layers=[document.getElementById('hbgA'),document.getElementById('hbgB')], hfront=0;
+  var euforia=[
+    {i:'assets/photos/euforia1.jpg',p:'60% 32%',z:1.05},
+    {i:'assets/photos/euforia2.jpg',p:'48% 36%',z:1.12},
+    {i:'assets/photos/euforia3.jpg',p:'63% 40%',z:1.55},
+    {i:'assets/photos/euforia4.jpg',p:'58% 42%',z:1.15},
+    {i:'assets/photos/euforia5.jpg',p:'37% 40%',z:1.4},
+    {i:'assets/photos/euforia6.jpg',p:'55% 38%',z:1.25}
+  ];
+  var htimer=null, hei=0;
+  function hmark(m){btns.forEach(function(b){b.classList.toggle('on',b.dataset.mode===m);});}
+  function hstop(){if(htimer){clearInterval(htimer);htimer=null;}}
+  function setImg(src,pos,z){var back=layers[1-hfront];var im=new Image();im.onload=function(){back.style.backgroundImage="url('"+src+"')";back.style.backgroundPosition=pos;back.style.transformOrigin=pos;back.style.transform='scale('+(z||1)+')';void back.offsetWidth;back.classList.add('show');layers[hfront].classList.remove('show');hfront=1-hfront;};im.src=src;}
+  function hideReel(){bgvid.style.display='none';try{initBg();if(bgPlayer){bgPlayer.setMuted(true);}bgMuted=true;volBtn.innerHTML=ICON_MUTED;}catch(e){}volBtn.style.display='none';}
+  function showReel(){hstop();layers[0].classList.remove('show');layers[1].classList.remove('show');bgvid.style.display='';volBtn.style.display='';}
+  function showRetrato(){hstop();hideReel();setImg('assets/photos/bio_03.jpg','center 42%',1);}
+  function showEuforia(){hstop();hideReel();hei=0;setImg(euforia[0].i,euforia[0].p,euforia[0].z);htimer=setInterval(function(){hei=(hei+1)%euforia.length;setImg(euforia[hei].i,euforia[hei].p,euforia[hei].z);},4200);}
+  function hgo(m){hmark(m);if(m==='reel')showReel();else if(m==='retrato')showRetrato();else showEuforia();}
+  sw.addEventListener('click',function(e){var b=e.target.closest('button');if(b)hgo(b.dataset.mode);});
+  var pool=['reel','reel','reel','reel','reel','euforia','euforia','euforia','retrato'];
+  hgo(pool[Math.floor(Math.random()*pool.length)]);
+})();
 </script>
 <script src="https://player.vimeo.com/api/player.js"></script>
 </body>
