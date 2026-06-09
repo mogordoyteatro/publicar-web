@@ -102,7 +102,7 @@ header.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end
 .heroswitch button{background:rgba(12,12,13,.6);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);border:1px solid rgba(244,241,234,.22);color:#cfcabf;font-family:var(--sans);font-size:11px;letter-spacing:.05em;text-transform:uppercase;padding:8px 12px;border-radius:3px;cursor:pointer;transition:.2s}
 .heroswitch button.on{border-color:var(--accent);color:#fff}
 .heroswitch button:hover{color:#fff}
-@media(max-width:640px){.heroswitch{left:18px;right:18px;justify-content:center;bottom:44px}}
+@media(max-width:640px){.heroswitch{top:66px;left:14px;right:auto;bottom:auto;justify-content:flex-start;gap:6px}.heroswitch button{padding:7px 10px;font-size:10px}}
 header.hero .inner{position:relative;z-index:3;padding-bottom:26px;width:100%}
 header.hero .inner .wrap{text-align:center}
 header.hero h1{display:inline-block;font-family:var(--display);font-weight:400;font-size:clamp(46px,11.5vw,146px);line-height:.8;letter-spacing:-.01em;text-transform:uppercase;max-width:100%;opacity:0;transition:opacity .35s ease}
@@ -280,7 +280,7 @@ section.dark{background:var(--bg2)}
 .tray[open] summary.tray-toggle{border-color:var(--accent);border-bottom-left-radius:0;border-bottom-right-radius:0}
 .tray[open] .cv-arrow{transform:rotate(180deg)}
 .tray-body{padding:30px 4px 0}
-.tray-intro{font-size:clamp(15px,1.4vw,18px);line-height:1.7;color:#d8d3c8;max-width:920px;margin-bottom:36px}
+.tray-intro{font-size:clamp(15px,1.45vw,19px);line-height:1.7;color:#d8d3c8;max-width:1180px;margin:0 auto 40px;text-align:center}
 .tray-intro b{color:var(--ink);font-weight:500}
 .tray-films-h{display:block;margin:42px 0 16px}
 .films-mini{grid-template-columns:repeat(auto-fill,minmax(116px,1fr));gap:10px}
@@ -438,6 +438,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
   .bio-btns .btn{width:100%;justify-content:center;font-size:12px;padding:14px 14px}
   /* films */
   .films{grid-template-columns:repeat(2,1fr);gap:12px}
+  .films-mini{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
   .film-info h3{font-size:13px}
   /* parallax shorter */
   .parallax{height:46vh}
@@ -446,6 +447,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 @media(max-width:420px){
   header.hero h1{font-size:clamp(40px,13vw,60px)}
   .films{grid-template-columns:1fr}
+  .films-mini{grid-template-columns:repeat(3,minmax(0,1fr))}
   .gal{column-count:2}
 }
 </style>
