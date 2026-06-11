@@ -81,7 +81,8 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 <style>
 :root{
   --bg:#0c0c0d; --bg2:#141416; --ink:#f4f1ea; --muted:#9a958c;
@@ -145,8 +146,9 @@ header.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end
 @media(max-width:640px){.heroswitch{gap:5px}.heroswitch button{padding:6px 8px;font-size:9px;letter-spacing:.03em}}
 header.hero .inner{position:relative;z-index:3;padding-bottom:26px;width:100%}
 header.hero .inner .wrap{text-align:center}
-header.hero h1{display:inline-block;font-family:var(--display);font-weight:400;font-size:clamp(46px,11.5vw,146px);line-height:.8;letter-spacing:-.01em;text-transform:uppercase;max-width:100%;opacity:0;transition:opacity .35s ease}
-body.fonts-ready header.hero h1{opacity:1}
+header.hero h1{display:inline-block;font-family:var(--display);font-weight:400;font-size:clamp(46px,11.5vw,146px);line-height:.8;letter-spacing:-.01em;text-transform:uppercase;max-width:100%;opacity:0;transition:opacity .35s ease;animation:h1fallback .35s ease 1.4s forwards}
+@keyframes h1fallback{to{opacity:1}}
+body.fonts-ready header.hero h1{opacity:1;animation:none}
 .nl{display:block;text-align:center}
 .nl .nt{display:inline-block;transform-origin:center}
 .herometa{margin:0 auto 12px;display:flex;justify-content:space-between;align-items:center;gap:14px}
@@ -551,7 +553,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 
 <header class="hero" id="top">
   <div class="bgvid" id="bgvid">
-    <iframe id="bgvimeo" src="https://player.vimeo.com/video/624294626?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&playsinline=1&dnt=1" allow="autoplay; fullscreen" title="Reel de fondo"></iframe>
+    <iframe id="bgvimeo" data-src="https://player.vimeo.com/video/624294626?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&playsinline=1&dnt=1" allow="autoplay; fullscreen" title="Reel de fondo"></iframe>
   </div>
   <div class="herobg" id="hbgA"></div>
   <div class="herobg" id="hbgB"></div>
@@ -1080,7 +1082,7 @@ const ICON_ON='<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="cu
 const volBtn=document.getElementById('volbtn');
 volBtn.innerHTML=ICON_MUTED;
 let bgMuted=true, bgPlayer=null;
-function initBg(){ if(window.Vimeo&&!bgPlayer){ bgPlayer=new Vimeo.Player(document.getElementById('bgvimeo')); } }
+function initBg(){ var f=document.getElementById('bgvimeo'); if(window.Vimeo&&!bgPlayer&&f&&f.src){ bgPlayer=new Vimeo.Player(f); } }
 volBtn.onclick=()=>{ initBg(); if(!bgPlayer) return; bgMuted=!bgMuted; bgPlayer.setMuted(bgMuted); if(!bgMuted){ bgPlayer.setVolume(1); } volBtn.innerHTML=bgMuted?ICON_MUTED:ICON_ON; volBtn.setAttribute('aria-label', bgMuted?'Activar sonido del video':'Silenciar video'); };
 
 (function(){
@@ -1099,11 +1101,13 @@ volBtn.onclick=()=>{ initBg(); if(!bgPlayer) return; bgMuted=!bgMuted; bgPlayer.
   var htimer=null, hei=0;
   function hmark(m){btns.forEach(function(b){b.classList.toggle('on',b.dataset.mode===m);});}
   function hstop(){if(htimer){clearInterval(htimer);htimer=null;}}
-  function setImg(src,pos,z){var back=layers[1-hfront];var im=new Image();im.onload=function(){back.style.backgroundImage="url('"+src+"')";back.style.backgroundPosition=pos;back.style.transformOrigin=pos;back.style.transform='scale('+(z||1)+')';void back.offsetWidth;back.classList.add('show');layers[hfront].classList.remove('show');hfront=1-hfront;};im.src=src;}
+  function setImg(src,pos,z,instant){var back=layers[1-hfront];function apply(){back.style.backgroundImage="url('"+src+"')";back.style.backgroundPosition=pos;back.style.transformOrigin=pos;back.style.transform='scale('+(z||1)+')';void back.offsetWidth;back.classList.add('show');layers[hfront].classList.remove('show');hfront=1-hfront;}
+    if(instant){apply();}else{var im=new Image();im.onload=apply;im.src=src;}}
+  function ensureReel(){var f=document.getElementById('bgvimeo');if(f&&!f.src&&f.dataset.src){f.src=f.dataset.src;}}
   function hideReel(){bgvid.style.display='none';try{initBg();if(bgPlayer){bgPlayer.setMuted(true);}bgMuted=true;volBtn.innerHTML=ICON_MUTED;}catch(e){}volBtn.style.display='none';}
-  function showReel(){hstop();layers[0].classList.remove('show');layers[1].classList.remove('show');bgvid.style.display='';volBtn.style.display='';}
-  function showRetrato(){hstop();hideReel();setImg('assets/photos/bio_03.jpg','center 42%',1);}
-  function showEuforia(){hstop();hideReel();hei=0;setImg(euforia[0].i,euforia[0].p,euforia[0].z);htimer=setInterval(function(){hei=(hei+1)%euforia.length;setImg(euforia[hei].i,euforia[hei].p,euforia[hei].z);},4200);}
+  function showReel(){hstop();ensureReel();layers[0].classList.remove('show');layers[1].classList.remove('show');bgvid.style.display='';volBtn.style.display='';}
+  function showRetrato(){hstop();hideReel();setImg('assets/photos/bio_03.jpg','center 42%',1,true);}
+  function showEuforia(){hstop();hideReel();hei=0;setImg(euforia[0].i,euforia[0].p,euforia[0].z,true);htimer=setInterval(function(){hei=(hei+1)%euforia.length;setImg(euforia[hei].i,euforia[hei].p,euforia[hei].z);},4200);}
   function hgo(m){hmark(m);if(m==='reel')showReel();else if(m==='retrato')showRetrato();else showEuforia();}
   sw.addEventListener('click',function(e){var b=e.target.closest('button');if(b)hgo(b.dataset.mode);});
   var isMobile=window.matchMedia('(max-width:820px)').matches;
