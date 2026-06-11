@@ -18,6 +18,7 @@
 <meta property="og:description" content="Actor y director argentino en Barcelona. Treinta años en teatro, cine y TV (Netflix). Reel, filmografía y talleres de entrenamiento actoral.">
 <meta property="og:url" content="https://www.sebastianmogordoy.com/">
 <meta property="og:image" content="https://www.sebastianmogordoy.com/assets/photos/bio_03.jpg">
+<meta property="og:image:alt" content="Sebastián Mogordoy, actor argentino en Barcelona">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Sebastián Mogordoy, actor argentino en Barcelona">
 <meta name="twitter:description" content="Actor y director. Teatro, cine y TV entre Buenos Aires y Barcelona. Reel, filmografía y talleres.">
@@ -25,19 +26,57 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Person",
-  "name": "Sebastián Mogordoy",
-  "alternateName": "Sebastián Eliseo Mogordoy",
-  "jobTitle": ["Actor", "Director teatral", "Profesor de teatro"],
-  "nationality": "Argentina",
-  "url": "https://www.sebastianmogordoy.com/",
-  "image": "https://www.sebastianmogordoy.com/assets/photos/bio_03.jpg",
-  "description": "Actor y director argentino radicado en Barcelona, con treinta años de trayectoria en teatro, cine y televisión a ambos lados del Atlántico.",
-  "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES"},
-  "worksFor": {"@type": "Organization", "name": "Talleres de Teatro Barcelona", "url": "https://www.talleresdeteatro.es"},
-  "sameAs": ["https://www.imdb.com/name/nm3361869/", "https://www.talleresdeteatro.es"],
-  "knowsAbout": ["Actuación", "Dirección teatral", "Formación actoral", "Dramaturgia", "Entrenamiento actoral"],
-  "award": "Premio Teatro del Mundo a Mejor Actor"
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://www.sebastianmogordoy.com/#person",
+      "name": "Sebastián Mogordoy",
+      "alternateName": "Sebastián Eliseo Mogordoy",
+      "jobTitle": ["Actor", "Director teatral", "Profesor de teatro"],
+      "nationality": "Argentina",
+      "birthPlace": {"@type": "Place", "name": "Rosario, Argentina"},
+      "url": "https://www.sebastianmogordoy.com/",
+      "mainEntityOfPage": "https://www.sebastianmogordoy.com/",
+      "image": "https://www.sebastianmogordoy.com/assets/photos/bio_03.jpg",
+      "description": "Actor y director argentino radicado en Barcelona, con treinta años de trayectoria en teatro, cine y televisión a ambos lados del Atlántico. Formó parte del elenco protagónico de La corazonada, primera película original de Netflix en Argentina.",
+      "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES"},
+      "worksFor": {"@type": "Organization", "name": "Talleres de Teatro Barcelona", "url": "https://www.talleresdeteatro.es"},
+      "sameAs": [
+        "https://www.imdb.com/name/nm3361869/",
+        "https://es.wikipedia.org/wiki/Sebasti%C3%A1n_Mogordoy",
+        "https://www.filmaffinity.com/us/name.php?name-id=505348686",
+        "https://www.themoviedb.org/person/1084678-sebastian-mogordoy",
+        "https://mubi.com/es/cast/sebastian-mogordoy-10",
+        "https://www.sensacine.com/actores/actor-615474/",
+        "https://cinenacional.com/persona/sebastian-mogordoy",
+        "http://www.alternativateatral.com/persona1759-sebastian-mogordoy",
+        "https://www.instagram.com/sebamogordoy",
+        "https://www.talleresdeteatro.es"
+      ],
+      "knowsAbout": ["Actuación", "Dirección teatral", "Formación actoral", "Dramaturgia", "Entrenamiento actoral"],
+      "award": [
+        "Premio Teatro del Mundo a Mejor Actor de Teatro (2009)",
+        "Premio Teatro del Mundo, Destacado en Actuación Masculina (2008)"
+      ],
+      "performerIn": [
+        {"@type": "Movie", "name": "La corazonada", "datePublished": "2020", "sameAs": "https://www.imdb.com/title/tt12282598/"},
+        {"@type": "Movie", "name": "El robo del siglo", "datePublished": "2020"},
+        {"@type": "Movie", "name": "Metegol", "datePublished": "2013"},
+        {"@type": "TheaterEvent", "name": "El Fill", "location": {"@type": "PerformingArtsTheater", "name": "Teatre Lliure", "address": {"@type": "PostalAddress", "addressLocality": "Barcelona", "addressCountry": "ES"}}},
+        {"@type": "TheaterEvent", "name": "Euforia y desazón", "location": {"@type": "PerformingArtsTheater", "name": "Teatros del Canal", "address": {"@type": "PostalAddress", "addressLocality": "Madrid", "addressCountry": "ES"}}}
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://www.sebastianmogordoy.com/#website",
+      "url": "https://www.sebastianmogordoy.com/",
+      "name": "Sebastián Mogordoy",
+      "alternateName": "sebastianmogordoy.com",
+      "inLanguage": "es",
+      "about": {"@id": "https://www.sebastianmogordoy.com/#person"},
+      "publisher": {"@id": "https://www.sebastianmogordoy.com/#person"}
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,6 +91,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:64px}
 html,body{overflow-x:hidden;max-width:100%}
 body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
@@ -962,7 +1002,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 </div>
 
 <script>
-const PHOTOS = ["assets/photos/galeria/galeria_000.jpg", "assets/photos/galeria/galeria_001.jpg", "assets/photos/galeria/galeria_002.jpg", "assets/photos/galeria/galeria_003.jpg", "assets/photos/galeria/galeria_004.jpg", "assets/photos/galeria/galeria_005.jpg", "assets/photos/galeria/galeria_006.jpg", "assets/photos/galeria/galeria_007.jpg", "assets/photos/galeria/galeria_008.jpg", "assets/photos/galeria/galeria_009.jpg", "assets/photos/galeria/galeria_010.jpg", "assets/photos/galeria/galeria_011.jpg", "assets/photos/galeria/galeria_012.jpg", "assets/photos/galeria/galeria_013.jpg", "assets/photos/galeria/galeria_014.jpg", "assets/photos/galeria/galeria_015.jpg", "assets/photos/galeria/galeria_016.jpg", "assets/photos/galeria/galeria_017.jpg", "assets/photos/galeria/galeria_018.jpg", "assets/photos/galeria/galeria_019.jpg", "assets/photos/galeria/galeria_020.jpg", "assets/photos/galeria/galeria_021.jpg", "assets/photos/galeria/galeria_022.jpg", "assets/photos/galeria/galeria_023.jpg", "assets/photos/galeria/galeria_024.jpg", "assets/photos/galeria/galeria_025.jpg", "assets/photos/galeria/galeria_026.jpg", "assets/photos/galeria/galeria_027.jpg", "assets/photos/galeria/galeria_028.jpg", "assets/photos/galeria/galeria_029.jpg", "assets/photos/galeria/galeria_030.jpg", "assets/photos/galeria/galeria_031.jpg", "assets/photos/galeria/galeria_032.jpg", "assets/photos/galeria/galeria_033.jpg", "assets/photos/galeria/galeria_034.jpg", "assets/photos/galeria/galeria_035.jpg", "assets/photos/galeria/galeria_036.jpg", "assets/photos/galeria/galeria_037.jpg", "assets/photos/galeria/galeria_038.jpg", "assets/photos/galeria/galeria_039.jpg", "assets/photos/galeria/galeria_040.jpg", "assets/photos/galeria/galeria_041.jpg", "assets/photos/galeria/galeria_042.jpg", "assets/photos/galeria/galeria_043.jpg", "assets/photos/galeria/galeria_044.jpg", "assets/photos/galeria/galeria_045.jpg", "assets/photos/galeria/galeria_046.jpg", "assets/photos/galeria/galeria_047.jpg", "assets/photos/galeria/galeria_048.jpg", "assets/photos/galeria/galeria_049.jpg", "assets/photos/galeria/galeria_050.jpg", "assets/photos/galeria/galeria_051.jpg", "assets/photos/galeria/galeria_052.jpg", "assets/photos/galeria/galeria_053.jpg", "assets/photos/galeria/galeria_054.jpg", "assets/photos/galeria/galeria_055.jpg", "assets/photos/galeria/galeria_056.jpg", "assets/photos/galeria/galeria_057.jpg", "assets/photos/galeria/galeria_058.jpg", "assets/photos/galeria/galeria_059.jpg", "assets/photos/galeria/galeria_060.jpg", "assets/photos/galeria/galeria_061.jpg", "assets/photos/galeria/galeria_062.jpg", "assets/photos/galeria/galeria_063.jpg", "assets/photos/galeria/galeria_064.jpg", "assets/photos/galeria/galeria_065.jpg", "assets/photos/galeria/galeria_066.jpg", "assets/photos/galeria/galeria_067.jpg", "assets/photos/galeria/galeria_068.jpg", "assets/photos/galeria/galeria_069.jpg", "assets/photos/galeria/galeria_070.jpg", "assets/photos/galeria/galeria_071.jpg", "assets/photos/galeria/galeria_072.jpg", "assets/photos/galeria/galeria_073.jpg", "assets/photos/galeria/galeria_074.jpg", "assets/photos/galeria/galeria_075.jpg", "assets/photos/galeria/galeria_076.jpg", "assets/photos/galeria/galeria_077.jpg", "assets/photos/galeria/galeria_078.jpg", "assets/photos/galeria/galeria_079.jpg", "assets/photos/galeria/galeria_080.jpg", "assets/photos/galeria/galeria_081.jpg", "assets/photos/galeria/galeria_082.jpg", "assets/photos/galeria/galeria_083.jpg", "assets/photos/galeria/galeria_084.jpg", "assets/photos/galeria/galeria_085.jpg", "assets/photos/galeria/galeria_086.jpg", "assets/photos/galeria/galeria_087.jpg", "assets/photos/galeria/galeria_088.jpg", "assets/photos/galeria/galeria_089.jpg", "assets/photos/galeria/galeria_090.jpg", "assets/photos/galeria/galeria_091.jpg", "assets/photos/galeria/galeria_092.jpg", "assets/photos/galeria/galeria_093.jpg", "assets/photos/galeria/galeria_094.jpg", "assets/photos/galeria/galeria_095.jpg", "assets/photos/galeria/galeria_096.jpg", "assets/photos/galeria/galeria_097.jpg", "assets/photos/galeria/galeria_098.jpg", "assets/photos/galeria/galeria_099.jpg", "assets/photos/galeria/galeria_100.jpg", "assets/photos/galeria/galeria_101.jpg", "assets/photos/galeria/galeria_102.jpg", "assets/photos/galeria/galeria_103.jpg", "assets/photos/galeria/galeria_104.jpg", "assets/photos/galeria/galeria_105.jpg", "assets/photos/galeria/galeria_106.jpg", "assets/photos/galeria/galeria_107.jpg", "assets/photos/galeria/galeria_108.jpg"];
+const PHOTOS = [["assets/photos/galeria/galeria_000.jpg", 1080, 1350], ["assets/photos/galeria/galeria_001.jpg", 1500, 844], ["assets/photos/galeria/galeria_002.jpg", 1436, 1181], ["assets/photos/galeria/galeria_003.jpg", 638, 441], ["assets/photos/galeria/galeria_004.jpg", 1170, 1224], ["assets/photos/galeria/galeria_005.jpg", 1421, 1500], ["assets/photos/galeria/galeria_006.jpg", 1440, 1330], ["assets/photos/galeria/galeria_007.jpg", 750, 937], ["assets/photos/galeria/galeria_008.jpg", 750, 937], ["assets/photos/galeria/galeria_009.jpg", 819, 819], ["assets/photos/galeria/galeria_010.jpg", 1500, 1000], ["assets/photos/galeria/galeria_011.jpg", 947, 1500], ["assets/photos/galeria/galeria_012.jpg", 844, 1500], ["assets/photos/galeria/galeria_013.jpg", 1500, 794], ["assets/photos/galeria/galeria_014.jpg", 857, 857], ["assets/photos/galeria/galeria_015.jpg", 1500, 794], ["assets/photos/galeria/galeria_016.jpg", 719, 723], ["assets/photos/galeria/galeria_017.jpg", 1306, 1500], ["assets/photos/galeria/galeria_018.jpg", 1500, 1087], ["assets/photos/galeria/galeria_019.jpg", 1500, 1478], ["assets/photos/galeria/galeria_020.jpg", 1500, 1073], ["assets/photos/galeria/galeria_021.jpg", 1500, 794], ["assets/photos/galeria/galeria_022.jpg", 1500, 794], ["assets/photos/galeria/galeria_023.jpg", 719, 723], ["assets/photos/galeria/galeria_024.jpg", 750, 937], ["assets/photos/galeria/galeria_025.jpg", 640, 800], ["assets/photos/galeria/galeria_026.jpg", 589, 593], ["assets/photos/galeria/galeria_027.jpg", 1080, 1350], ["assets/photos/galeria/galeria_028.jpg", 589, 593], ["assets/photos/galeria/galeria_029.jpg", 540, 360], ["assets/photos/galeria/galeria_030.jpg", 589, 593], ["assets/photos/galeria/galeria_031.jpg", 589, 593], ["assets/photos/galeria/galeria_032.jpg", 589, 593], ["assets/photos/galeria/galeria_033.jpg", 947, 941], ["assets/photos/galeria/galeria_034.jpg", 589, 406], ["assets/photos/galeria/galeria_035.jpg", 589, 479], ["assets/photos/galeria/galeria_036.jpg", 800, 553], ["assets/photos/galeria/galeria_037.jpg", 589, 593], ["assets/photos/galeria/galeria_038.jpg", 589, 593], ["assets/photos/galeria/galeria_039.jpg", 589, 593], ["assets/photos/galeria/galeria_040.jpg", 589, 479], ["assets/photos/galeria/galeria_041.jpg", 589, 593], ["assets/photos/galeria/galeria_042.jpg", 589, 593], ["assets/photos/galeria/galeria_043.jpg", 589, 479], ["assets/photos/galeria/galeria_044.jpg", 589, 593], ["assets/photos/galeria/galeria_045.jpg", 589, 593], ["assets/photos/galeria/galeria_046.jpg", 589, 593], ["assets/photos/galeria/galeria_047.jpg", 589, 593], ["assets/photos/galeria/galeria_048.jpg", 589, 593], ["assets/photos/galeria/galeria_049.jpg", 464, 593], ["assets/photos/galeria/galeria_050.jpg", 589, 593], ["assets/photos/galeria/galeria_051.jpg", 589, 593], ["assets/photos/galeria/galeria_052.jpg", 589, 481], ["assets/photos/galeria/galeria_053.jpg", 589, 593], ["assets/photos/galeria/galeria_054.jpg", 552, 363], ["assets/photos/galeria/galeria_055.jpg", 470, 328], ["assets/photos/galeria/galeria_056.jpg", 589, 593], ["assets/photos/galeria/galeria_057.jpg", 589, 593], ["assets/photos/galeria/galeria_058.jpg", 589, 469], ["assets/photos/galeria/galeria_059.jpg", 496, 593], ["assets/photos/galeria/galeria_060.jpg", 589, 593], ["assets/photos/galeria/galeria_061.jpg", 589, 593], ["assets/photos/galeria/galeria_062.jpg", 589, 593], ["assets/photos/galeria/galeria_063.jpg", 589, 593], ["assets/photos/galeria/galeria_064.jpg", 589, 593], ["assets/photos/galeria/galeria_065.jpg", 589, 593], ["assets/photos/galeria/galeria_066.jpg", 463, 589], ["assets/photos/galeria/galeria_067.jpg", 469, 593], ["assets/photos/galeria/galeria_068.jpg", 589, 593], ["assets/photos/galeria/galeria_069.jpg", 480, 360], ["assets/photos/galeria/galeria_070.jpg", 589, 593], ["assets/photos/galeria/galeria_071.jpg", 474, 593], ["assets/photos/galeria/galeria_072.jpg", 589, 593], ["assets/photos/galeria/galeria_073.jpg", 475, 579], ["assets/photos/galeria/galeria_074.jpg", 1280, 1265], ["assets/photos/galeria/galeria_075.jpg", 1000, 1500], ["assets/photos/galeria/galeria_076.jpg", 960, 641], ["assets/photos/galeria/galeria_077.jpg", 998, 666], ["assets/photos/galeria/galeria_078.jpg", 1500, 1000], ["assets/photos/galeria/galeria_079.jpg", 1500, 1000], ["assets/photos/galeria/galeria_080.jpg", 601, 557], ["assets/photos/galeria/galeria_081.jpg", 589, 593], ["assets/photos/galeria/galeria_082.jpg", 601, 557], ["assets/photos/galeria/galeria_083.jpg", 601, 557], ["assets/photos/galeria/galeria_084.jpg", 476, 592], ["assets/photos/galeria/galeria_085.jpg", 601, 557], ["assets/photos/galeria/galeria_086.jpg", 601, 426], ["assets/photos/galeria/galeria_087.jpg", 601, 557], ["assets/photos/galeria/galeria_088.jpg", 484, 594], ["assets/photos/galeria/galeria_089.jpg", 601, 421], ["assets/photos/galeria/galeria_090.jpg", 482, 599], ["assets/photos/galeria/galeria_091.jpg", 601, 557], ["assets/photos/galeria/galeria_092.jpg", 593, 475], ["assets/photos/galeria/galeria_093.jpg", 601, 557], ["assets/photos/galeria/galeria_094.jpg", 601, 557], ["assets/photos/galeria/galeria_095.jpg", 601, 557], ["assets/photos/galeria/galeria_096.jpg", 595, 592], ["assets/photos/galeria/galeria_097.jpg", 601, 557], ["assets/photos/galeria/galeria_098.jpg", 601, 557], ["assets/photos/galeria/galeria_099.jpg", 589, 593], ["assets/photos/galeria/galeria_100.jpg", 1436, 1436], ["assets/photos/galeria/galeria_101.jpg", 1500, 953], ["assets/photos/galeria/galeria_102.jpg", 1108, 1500], ["assets/photos/galeria/galeria_103.jpg", 1192, 1500], ["assets/photos/galeria/galeria_104.jpg", 1116, 1500], ["assets/photos/galeria/galeria_105.jpg", 1125, 1500], ["assets/photos/galeria/galeria_106.jpg", 1500, 1124], ["assets/photos/galeria/galeria_107.jpg", 1500, 1125], ["assets/photos/galeria/galeria_108.jpg", 924, 1500]];
 const VIDEOS = [{"type": "yt", "id": "EZqxB_GLLC8", "label": "Reel"}, {"type": "yt", "id": "4qekV4Yb6cU", "label": ""}, {"type": "yt", "id": "003PLGu2170", "label": ""}, {"type": "yt", "id": "U8NA6Cd6u4I", "label": ""}, {"type": "yt", "id": "b1syCAKNNaw", "label": ""}, {"type": "yt", "id": "C0I74Ui2bxk", "label": ""}, {"type": "yt", "id": "crCfB1bt-7M", "label": "Diablo"}, {"type": "yt", "id": "EEuFZ1SsP-w", "label": "Papeles en el viento"}, {"type": "yt", "id": "1kfKsXngyS8", "label": "Dos por una mentira"}, {"type": "yt", "id": "iAzb6Kfz9ng", "label": ""}, {"type": "yt", "id": "zB9XxOUFil8", "label": ""}, {"type": "yt", "id": "fzcelXjUSFY", "label": ""}, {"type": "yt", "id": "2UpQfDKzG2I", "label": ""}, {"type": "yt", "id": "dZJlDCVRpU8", "label": "Suplentes \u00b7 Cap. 2"}, {"type": "yt", "id": "znuCNgGsMLE", "label": "Suplentes \u00b7 Cap. 3"}, {"type": "yt", "id": "nxmHPfLDPUo", "label": "Suplentes \u00b7 Cap. 4"}, {"type": "yt", "id": "cD3KslCgexg", "label": "Silencios de familia"}, {"type": "yt", "id": "mom0WjNXSDY", "label": "Silencios de familia"}, {"type": "yt", "id": "yFROPbLmvDI", "label": "Nin\u00ed"}, {"type": "yt", "id": "0oNLHz6V4DQ", "label": "Farsantes"}, {"type": "yt", "id": "IiVPXFObSos", "label": "Nota AM"}, {"type": "yt", "id": "JU45J82AXWA", "label": "La m\u00e1quina idiota"}, {"type": "yt", "id": "K2hPChcZ8Tc", "label": "Desconectados An\u00f3nimos"}, {"type": "yt", "id": "mNS0fSRmtKk", "label": "Nin\u00ed"}, {"type": "yt", "id": "-nejb-EeK0c", "label": "Aqu\u00ed no hay quien viva"}, {"type": "yt", "id": "o4qDypRAkqY", "label": "Rancho Aparte"}, {"type": "yt", "id": "FUc1gNQFBd8", "label": "La funeraria"}, {"type": "yt", "id": "RYU93VADQ8s", "label": "Amor a tiros"}, {"type": "yt", "id": "3Gfibj23GUE", "label": "La liebre y la tortuga"}, {"type": "yt", "id": "jg_E44BhDgE", "label": "Entrevista V\u00eda Rosario"}, {"type": "yt", "id": "AIkOu-qnRN0", "label": "Galletitas Rex"}, {"type": "yt", "id": "wz_4XML24Dc", "label": "\u00daltima voluntad"}, {"type": "yt", "id": "vQyPPN08A1s", "label": "Nin\u00ed AM"}, {"type": "yt", "id": "h_E8KSLYoTw", "label": "Sr. y Sra. Camas"}, {"type": "yt", "id": "UsSpYrCKOWI", "label": "Backstage Nin\u00ed"}, {"type": "yt", "id": "LZAEN5JQwJM", "label": "Sr. y Sra. Camas"}, {"type": "yt", "id": "zYTiqxT-yHk", "label": "El eslab\u00f3n podrido \u00b7 trailer"}, {"type": "vimeo", "id": "624294626", "label": "Reel"}];
 document.getElementById('yr').textContent = new Date().getFullYear();
 
@@ -1007,12 +1047,15 @@ function ploop(){parallax();requestAnimationFrame(ploop);}
 requestAnimationFrame(ploop);
 
 const gal = document.getElementById('gal');
-PHOTOS.forEach((u,i)=>{
+PHOTOS.forEach((p,i)=>{
+  const u = Array.isArray(p)?p[0]:p;
   const im = document.createElement('img');
   im.loading='lazy'; im.src=u; im.alt='Sebastián Mogordoy';
+  if(Array.isArray(p)&&p[1]>0){im.width=p[1];im.height=p[2];}
   im.onclick=()=>openImg(i);
   gal.appendChild(im);
 });
+function photoUrl(i){const p=PHOTOS[i];return Array.isArray(p)?p[0]:p}
 
 const vg = document.getElementById('vidgrid');
 if(vg){VIDEOS.forEach(v=>{
@@ -1025,9 +1068,9 @@ if(vg){VIDEOS.forEach(v=>{
 
 let curImg=0;
 const lb=document.getElementById('lb'), lbc=document.getElementById('lbcontent');
-function openImg(i){curImg=i;lbc.innerHTML='<img src="'+PHOTOS[i]+'">';lb.classList.add('open');document.querySelectorAll('#lb .nav').forEach(n=>n.style.display='block')}
+function openImg(i){curImg=i;lbc.innerHTML='<img src="'+photoUrl(i)+'">';lb.classList.add('open');document.querySelectorAll('#lb .nav').forEach(n=>n.style.display='block')}
 function openVid(v){var inner;if(v.type==='mp4'){inner='<div class="frame"><video src="'+v.id+'" controls autoplay playsinline style="width:100%;height:100%;background:#000"></video></div>';}else{var src=v.type==='yt'?'https://www.youtube.com/embed/'+v.id+'?autoplay=1':'https://player.vimeo.com/video/'+v.id+'?autoplay=1&dnt=1';inner='<div class="frame"><iframe src="'+src+'" allow="autoplay; fullscreen" allowfullscreen></iframe></div>';}lbc.innerHTML=inner;lb.classList.add('open');document.querySelectorAll('#lb .nav').forEach(n=>n.style.display='none')}
-function step(d){curImg=(curImg+d+PHOTOS.length)%PHOTOS.length;lbc.innerHTML='<img src="'+PHOTOS[curImg]+'">'}
+function step(d){curImg=(curImg+d+PHOTOS.length)%PHOTOS.length;lbc.innerHTML='<img src="'+photoUrl(curImg)+'">'}
 function closeLb(){lb.classList.remove('open');lbc.innerHTML=''}
 lb.onclick=e=>{if(e.target===lb)closeLb()};
 document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;if(e.key==='Escape')closeLb();if(e.key==='ArrowLeft'&&lbc.querySelector('img'))step(-1);if(e.key==='ArrowRight'&&lbc.querySelector('img'))step(1)});
