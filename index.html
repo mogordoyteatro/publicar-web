@@ -136,7 +136,7 @@ nav .links.open a:last-child{border-bottom:0}
 
 header.hero{position:relative;min-height:100vh;display:flex;align-items:flex-end;overflow:hidden;background:#171210 url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD//gA7Q1JFQVRPUjogZ2QtanBlZyB2MS4wICh1c2luZyBJSkcgSlBFRyB2NjIpLCBxdWFsaXR5ID0gNzAK/9sAQwASDA0QDQsSEA4QFBMSFRssHRsYGBs2JykgLEA5REM/OT49R1BmV0dLYU09Pll5WmFpbXJzckVVfYZ8b4VmcHJu/9sAQwETFBQbFxs0HR00bkk+SW5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm5u/8AAEQgAFgAoAwEiAAIRAQMRAf/EAB8AAAEFAQEBAQEBAAAAAAAAAAABAgMEBQYHCAkKC//EALUQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCNCscEVUtHwJDNicoIJChYXGBkaJSYnKCkqNDU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6g4SFhoeIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2drh4uPk5ebn6Onq8fLz9PX29/j5+v/EAB8BAAMBAQEBAQEBAQEAAAAAAAABAgMEBQYHCAkKC//EALURAAIBAgQEAwQHBQQEAAECdwABAgMRBAUhMQYSQVEHYXETIjKBCBRCkaGxwQkjM1LwFWJy0QoWJDThJfEXGBkaJicoKSo1Njc4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoKDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uLj5OXm5+jp6vLz9PX29/j5+v/aAAwDAQACEQMRAD8AhtY4rmxI2fN2qgVntCRjgVLObjTpiwU7Paq5eW/l3qdo75qU2i5JNF22Jfa8pyD1qrqcURuFaHiprsrbpGsEoZh1AqpLckSIXXBpK7YNJISeNSil24oqeYwS2/mEdKKV2ug0o9zYuW8y1YsAcVgXrEhVjOwH0ooqluT0LEGjYRZhKd3Xms/UGJuMHtxRRUwd5FS2Lun2RvICC+0Ciiirk9TE/9k=') center 32%/cover}
 .bgvid{position:absolute;inset:0;overflow:hidden;background:#000}
-.bgvid iframe{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:100vw;height:56.25vw;min-height:100vh;min-width:177.78vh;border:0;pointer-events:none}
+.bgvid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
 .herobg{position:absolute;inset:0;background-size:cover;filter:contrast(1.03) saturate(1.06);z-index:1;opacity:0;transition:opacity 1s ease}
 .herobg.show{opacity:1}
 .herograd{position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(180deg,rgba(12,12,13,.5) 0%,rgba(12,12,13,.18) 26%,rgba(12,12,13,.55) 52%,rgba(12,12,13,.86) 70%,rgba(12,12,13,.98) 100%)}
@@ -558,7 +558,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
 
 <header class="hero" id="top">
   <div class="bgvid" id="bgvid">
-    <iframe id="bgvimeo" data-src="https://player.vimeo.com/video/624294626?autoplay=1&loop=1&muted=1&controls=0&title=0&byline=0&portrait=0&playsinline=1&dnt=1" allow="autoplay; fullscreen" title="Reel de fondo"></iframe>
+    <video id="bgreel" data-src="assets/videos/videobook.mp4" loop muted playsinline preload="none" aria-label="Reel de fondo"></video>
   </div>
   <div class="herobg" id="hbgA"></div>
   <div class="herobg" id="hbgB"></div>
@@ -569,7 +569,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
     <h1><span class="nl"><span class="nt">Sebastian</span></span><span class="nl"><span class="nt">Mogordoy</span></span></h1>
     <p class="tag">Treinta años en escena: teatro, cine y televisión. Entre Buenos Aires y Barcelona.</p>
     <div class="cta">
-      <a class="btn fill" onclick="openVid({type:'vimeo',id:'624294626'})">&#9654;&nbsp; Ver reel</a>
+      <a class="btn fill" onclick="openVid({type:'mp4',id:'assets/videos/videobook.mp4'})">&#9654;&nbsp; Ver reel</a>
       <a class="btn line" href="#contacto">Contratación</a>
     </div>
   </div></div>
@@ -679,6 +679,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
       </dl>
       <div class="bio-btns">
         <a class="btn fill" href="assets/fotos-prensa-sebastian-mogordoy.zip" download>&#8595;&nbsp; Descargar fotos</a>
+        <a class="btn line" href="assets/videos/videobook.mp4" download>&#8595;&nbsp; Descargar reel</a>
         <a class="btn line" href="assets/cv-sebastian-mogordoy.pdf" download>&#8595;&nbsp; Descargar CV PDF</a>
       </div>
     </div>
@@ -998,7 +999,7 @@ footer{padding:40px 0;border-top:1px solid var(--line);text-align:center;color:v
     <blockquote>“Si no hay fricción, si no te quema la sangre, lo que estás haciendo no es teatro, <span class="hl">es mentira</span>.”</blockquote>
     <cite>Sebastián Mogordoy</cite>
     <div class="cta">
-      <a class="btn fill" onclick="openVid({type:'vimeo',id:'624294626'})">&#9654;&nbsp; Ver reel</a>
+      <a class="btn fill" onclick="openVid({type:'mp4',id:'assets/videos/videobook.mp4'})">&#9654;&nbsp; Ver reel</a>
       <a class="btn line" href="#contacto">Contratación</a>
     </div>
   </div>
@@ -1091,9 +1092,9 @@ const ICON_MUTED='<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z" fill=
 const ICON_ON='<svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16 8.5a4.5 4.5 0 0 1 0 7M18.7 6a8 8 0 0 1 0 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg>';
 const volBtn=document.getElementById('volbtn');
 volBtn.innerHTML=ICON_MUTED;
-let bgMuted=true, bgPlayer=null;
-function initBg(){ var f=document.getElementById('bgvimeo'); if(window.Vimeo&&!bgPlayer&&f&&f.src){ bgPlayer=new Vimeo.Player(f); } }
-volBtn.onclick=()=>{ initBg(); if(!bgPlayer) return; bgMuted=!bgMuted; bgPlayer.setMuted(bgMuted); if(!bgMuted){ bgPlayer.setVolume(1); } volBtn.innerHTML=bgMuted?ICON_MUTED:ICON_ON; volBtn.setAttribute('aria-label', bgMuted?'Activar sonido del video':'Silenciar video'); };
+let bgMuted=true;
+function bgEl(){ return document.getElementById('bgreel'); }
+volBtn.onclick=()=>{ var v=bgEl(); if(!v) return; bgMuted=!bgMuted; v.muted=bgMuted; if(!bgMuted){ v.volume=1; if(v.paused){ v.play().catch(function(){}); } } volBtn.innerHTML=bgMuted?ICON_MUTED:ICON_ON; volBtn.setAttribute('aria-label', bgMuted?'Activar sonido del video':'Silenciar video'); };
 
 (function(){
   var bgvid=document.getElementById('bgvid'), sw=document.getElementById('heroSw');
@@ -1113,8 +1114,8 @@ volBtn.onclick=()=>{ initBg(); if(!bgPlayer) return; bgMuted=!bgMuted; bgPlayer.
   function hstop(){if(htimer){clearInterval(htimer);htimer=null;}}
   function setImg(src,pos,z,instant){var back=layers[1-hfront];function apply(){back.style.backgroundImage="url('"+src+"')";back.style.backgroundPosition=pos;back.style.transformOrigin=pos;back.style.transform='scale('+(z||1)+')';void back.offsetWidth;back.classList.add('show');layers[hfront].classList.remove('show');hfront=1-hfront;}
     if(instant){apply();}else{var im=new Image();im.onload=apply;im.src=src;}}
-  function ensureReel(){var f=document.getElementById('bgvimeo');if(f&&!f.src&&f.dataset.src){f.src=f.dataset.src;}}
-  function hideReel(){bgvid.style.display='none';try{initBg();if(bgPlayer){bgPlayer.setMuted(true);}bgMuted=true;volBtn.innerHTML=ICON_MUTED;}catch(e){}volBtn.style.display='none';}
+  function ensureReel(){var v=bgEl();if(!v)return;if(!v.getAttribute('src')&&v.dataset.src){v.src=v.dataset.src;}v.play().catch(function(){});}
+  function hideReel(){bgvid.style.display='none';try{var v=bgEl();if(v){v.pause();v.muted=true;}bgMuted=true;volBtn.innerHTML=ICON_MUTED;}catch(e){}volBtn.style.display='none';}
   function showReel(){hstop();ensureReel();layers[0].classList.remove('show');layers[1].classList.remove('show');bgvid.style.display='';volBtn.style.display='';}
   function showRetrato(){hstop();hideReel();setImg('assets/photos/bio_03.jpg','center 42%',1,true);}
   function showEuforia(){hstop();hideReel();hei=0;setImg(euforia[0].i,euforia[0].p,euforia[0].z,true);htimer=setInterval(function(){hei=(hei+1)%euforia.length;setImg(euforia[hei].i,euforia[hei].p,euforia[hei].z);},4200);}
@@ -1125,6 +1126,5 @@ volBtn.onclick=()=>{ initBg(); if(!bgPlayer) return; bgMuted=!bgMuted; bgPlayer.
   hgo(pool[Math.floor(Math.random()*pool.length)]);
 })();
 </script>
-<script src="https://player.vimeo.com/api/player.js"></script>
 </body>
 </html>
